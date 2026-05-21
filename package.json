@@ -29,7 +29,7 @@
 		"check:fix": "biome check --write .",
 		"cosmos": "cosmos",
 		"cosmos:export": "cosmos-export",
-		"dev": "vite",
+		"dev": "cosmos",
 		"format": "biome format --write .",
 		"lint": "biome lint .",
 		"prepare": "panda codegen",
