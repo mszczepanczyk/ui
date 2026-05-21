@@ -1,12 +1,12 @@
-export { AbsoluteCenter, type AbsoluteCenterProps } from "./absolute-center";
+export { AbsoluteCenter, type AbsoluteCenterProps } from "./AbsoluteCenter";
 export {
 	Button,
 	ButtonGroup,
 	type ButtonGroupProps,
 	type ButtonProps,
-} from "./button";
-export { Group, type GroupProps } from "./group";
-export { Input, type InputProps } from "./input";
-export { Loader, type LoaderProps } from "./loader";
-export { Span, type SpanProps } from "./span";
-export { Spinner, type SpinnerProps } from "./spinner";
+} from "./Button";
+export { Group, type GroupProps } from "./Group";
+export { Input, type InputProps } from "./Input";
+export { Loader, type LoaderProps } from "./Loader";
+export { Span, type SpanProps } from "./Span";
+export { Spinner, type SpinnerProps } from "./Spinner";

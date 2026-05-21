@@ -4,8 +4,8 @@ import { createContext, mergeProps } from "@ark-ui/react/utils";
 import { type ComponentProps, forwardRef, useMemo } from "react";
 import { styled } from "styled-system/jsx";
 import { type ButtonVariantProps, button } from "styled-system/recipes";
-import { Group, type GroupProps } from "./group";
-import { Loader } from "./loader";
+import { Group, type GroupProps } from "./Group";
+import { Loader } from "./Loader";
 
 interface ButtonLoadingProps {
 	/**

@@ -1,5 +1,5 @@
 import { css } from "styled-system/css";
-import { AbsoluteCenter } from "./absolute-center";
+import { AbsoluteCenter } from "./AbsoluteCenter";
 
 export default {
 	default: (

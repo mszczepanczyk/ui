@@ -1,4 +1,4 @@
-import { Input } from "./input";
+import { Input } from "./Input";
 
 export default {
 	default: <Input placeholder="Enter text..." />,

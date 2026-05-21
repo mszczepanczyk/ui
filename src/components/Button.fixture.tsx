@@ -1,4 +1,4 @@
-import { Button } from "./button";
+import { Button } from "./Button";
 
 export default {
 	solid: <Button variant="solid">Solid Button</Button>,

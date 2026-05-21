@@ -1,4 +1,4 @@
-import { Span } from "./span";
+import { Span } from "./Span";
 
 export default {
 	default: <Span>Default span</Span>,
