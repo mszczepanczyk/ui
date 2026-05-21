@@ -7,6 +7,7 @@ export default defineConfig({
 	retries: process.env.CI ? 2 : 0,
 	workers: process.env.CI ? 1 : undefined,
 	reporter: [["html", { outputFolder: "playwright-report" }], ["list"]],
+	snapshotPathTemplate: "{testDir}/{testFilePath}-snapshots/{arg}{ext}",
 	use: {
 		baseURL: "http://localhost:5100",
 		trace: "on-first-retry",
