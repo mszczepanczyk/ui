@@ -34,3 +34,8 @@ dist-ssr
 
 ## Panda
 styled-system-studio
+
+## Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/

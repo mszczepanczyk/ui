@@ -34,6 +34,9 @@
 		"lint": "biome lint .",
 		"prepare": "panda codegen",
 		"preview": "vite preview",
+		"test:visual": "playwright test",
+		"test:visual:report": "playwright show-report",
+		"test:visual:update": "playwright test --update-snapshots",
 		"typecheck": "tsc --noEmit"
 	},
 	"peerDependencies": {
@@ -47,7 +50,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.15",
 		"@pandacss/dev": "^1.11.1",
-		"@types/node": "^24.12.3",
+		"@playwright/test": "^1.60.0",
+		"@types/node": "^24.12.4",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.1",
