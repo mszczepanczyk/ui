@@ -4,7 +4,7 @@
 	"userImportsPath": "src/cosmos.imports.ts",
 	"vite": {
 		"port": 5101,
-		"mainScriptUrl": "/src/main.tsx"
+		"configPath": "vite.cosmos.config.ts"
 	},
 	"dom": {
 		"containerQuerySelector": "#root"

@@ -3,6 +3,7 @@
 .claude/*.local.*
 
 # Cosmos
+cosmos-export
 /index.html
 
 # Logs
