@@ -24,13 +24,8 @@ npm run dev
 
 ## Scripts
 
-- `npm run dev` - Vite dev server
+- `npm run dev` - Component playground (React Cosmos)
 - `npm run build` - Build library
-- `npm run cosmos` - Component playground
 - `npm run lint` - Biome linter
 - `npm run format` - Biome formatter
 - `npm run typecheck` - TypeScript check
-
-## License
-
-MIT
