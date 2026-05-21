@@ -76,6 +76,17 @@ for (const { component, fixture } of fixtures) {
 		const iframeElement = page.locator("iframe");
 		await iframeElement.waitFor({ state: "attached", timeout: 10000 });
 
+		// Inject Liberation fonts into the iframe for cross-platform consistency
+		const iframeHandle = await page.locator("iframe").elementHandle();
+		const contentFrame = await iframeHandle?.contentFrame();
+		if (contentFrame) {
+			await contentFrame.addStyleTag({
+				path: path.resolve(__dirname, "fonts/fonts.css"),
+			});
+			// Wait for fonts to load in the iframe
+			await contentFrame.evaluate(() => document.fonts.ready);
+		}
+
 		// Give time for any animations or async rendering to complete
 		await page.waitForTimeout(1000);
 
