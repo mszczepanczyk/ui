@@ -2,6 +2,19 @@
 
 A TypeScript UI component library built on Park UI, Ark UI, and Panda CSS.
 
+## Features
+
+- Accessible components via Ark UI
+- Styled with Panda CSS
+- Full TypeScript support
+- React 19+
+
+## Installation
+
+```bash
+npm install @mariusz.sh/ui
+```
+
 ## Development
 
 ```bash
@@ -11,10 +24,13 @@ npm run dev
 
 ## Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build library and docs
-- `npm run build:lib` - Build library only
-- `npm run lint` - Run Biome linter
-- `npm run format` - Format code with Biome
-- `npm run check` - Run all Biome checks
-- `npm run typecheck` - Run TypeScript type checking
+- `npm run dev` - Vite dev server
+- `npm run build` - Build library
+- `npm run cosmos` - Component playground
+- `npm run lint` - Biome linter
+- `npm run format` - Biome formatter
+- `npm run typecheck` - TypeScript check
+
+## License
+
+MIT
