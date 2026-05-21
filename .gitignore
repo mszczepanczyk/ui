@@ -2,6 +2,9 @@
 
 .claude/*.local.*
 
+# Cosmos
+/index.html
+
 # Logs
 logs
 *.log
