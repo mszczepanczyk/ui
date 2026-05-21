@@ -73,6 +73,7 @@ Users get:
 - **Type safety:** Use advanced TypeScript features for DX
 - **No reinventing wheels:** Use existing libraries where appropriate
 - **Use official CLI generators:** Always use official CLI tools to scaffold configs (Vite, Panda CSS, Biome, Park UI, Cosmos) instead of writing from scratch. Customize the generated configs as needed.
+- **Never add dependencies manually:** Always use `npm install <package>` to add dependencies so they get the latest version. Never write version numbers directly in package.json.
 - **Iterative development:** Ask questions when unsure, stop when stuck
 
 ## First Iteration Goals
