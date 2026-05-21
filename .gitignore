@@ -1,3 +1,7 @@
+# Claude
+
+.claude/*.local.*
+
 # Logs
 logs
 *.log

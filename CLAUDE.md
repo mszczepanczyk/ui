@@ -35,33 +35,14 @@ Customize the generated configs as needed.
 
 ```
 src/
-├── components/          # UI components
-│   ├── button/
-│   │   ├── index.ts           # Exports
-│   │   ├── create-button.tsx  # Factory function
-│   │   ├── button.tsx         # Default Button
-│   │   └── button.recipe.ts   # Panda CSS recipe
+├── components/          # UI components (flat structure)
+│   ├── button.tsx
+│   ├── input.tsx
+│   ├── button.fixture.tsx  # Cosmos fixtures
 │   └── ...
 ├── theme/               # Theme system
+│   └── recipes/         # Panda CSS recipes
 └── index.ts             # Main exports
-```
-
-## Component Factory Pattern
-
-Every component uses a `create<Component>` factory. The library's default components are created using this same factory:
-
-```tsx
-// Library creates default Button
-export const Button = createButton({ /* default config */ });
-
-// Users extend with same API
-import { createButton } from '@mariusz.sh/ui';
-export const Button = createButton({
-  variants: {
-    variant: { gradient: { /* styles */ } },
-    size: { xl: { /* styles */ } }
-  }
-});
 ```
 
 ## Scripts
@@ -108,3 +89,4 @@ export default {
 - Tab indentation
 - Double quotes for strings
 - Organize imports on save
+- **Always run `npm run format` before committing**
