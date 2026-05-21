@@ -1,4 +1,7 @@
 import { expect, test } from "@playwright/test";
+import { globSync } from "glob";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 /**
  * Visual regression tests for React Cosmos fixtures.
@@ -13,35 +16,48 @@ import { expect, test } from "@playwright/test";
  * - npm run test:visual:report  → Open HTML diff report
  */
 
-// List all fixtures to test
-// Format: { component: "ComponentName", fixture: "fixtureName" }
-const fixtures = [
-	// AbsoluteCenter
-	{ component: "AbsoluteCenter", fixture: "default" },
-	// Button
-	{ component: "Button", fixture: "solid" },
-	{ component: "Button", fixture: "outline" },
-	{ component: "Button", fixture: "subtle" },
-	{ component: "Button", fixture: "plain" },
-	{ component: "Button", fixture: "sizes" },
-	{ component: "Button", fixture: "loading" },
-	{ component: "Button", fixture: "disabled" },
-	// Group
-	{ component: "Group", fixture: "horizontal" },
-	{ component: "Group", fixture: "vertical" },
-	// Input
-	{ component: "Input", fixture: "default" },
-	{ component: "Input", fixture: "withPlaceholder" },
-	{ component: "Input", fixture: "disabled" },
-	// Loader
-	{ component: "Loader", fixture: "default" },
-	{ component: "Loader", fixture: "sizes" },
-	{ component: "Loader", fixture: "withText" },
-	// Span
-	{ component: "Span", fixture: "default" },
-	// Spinner
-	{ component: "Spinner", fixture: "default" },
-];
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Automatically discover all fixtures by scanning the component directory.
+ * This eliminates the need to manually maintain a fixture list.
+ */
+async function discoverFixtures() {
+	const fixtureFiles = globSync("src/components/*.fixture.tsx", {
+		cwd: path.resolve(__dirname, ".."),
+	});
+
+	const fixtures: Array<{ component: string; fixture: string }> = [];
+
+	for (const filePath of fixtureFiles) {
+		const componentName = path.basename(filePath, ".fixture.tsx");
+		const fullPath = path.resolve(__dirname, "..", filePath);
+
+		// Dynamically import the fixture file
+		const fixtureModule = await import(fullPath);
+		const fixtureExports = fixtureModule.default || {};
+
+		// Add all exported fixtures
+		for (const fixtureName of Object.keys(fixtureExports)) {
+			fixtures.push({
+				component: componentName,
+				fixture: fixtureName,
+			});
+		}
+	}
+
+	return fixtures.sort((a, b) => {
+		// Sort by component name, then by fixture name
+		const componentCompare = a.component.localeCompare(b.component);
+		return componentCompare !== 0
+			? componentCompare
+			: a.fixture.localeCompare(b.fixture);
+	});
+}
+
+// Discover all fixtures at test time
+const fixtures = await discoverFixtures();
 
 for (const { component, fixture } of fixtures) {
 	test(`${component} - ${fixture}`, async ({ page }) => {
