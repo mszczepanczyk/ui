@@ -16,98 +16,98 @@ import { slotRecipes, recipes } from "@/theme/recipes";
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
-  // Whether to use css reset
-  preflight: true,
+	// Whether to use css reset
+	preflight: true,
 
-  // Where to look for your css declarations
-  include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
+	// Where to look for your css declarations
+	include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
 
-  // Files to exclude
-  exclude: [],
+	// Files to exclude
+	exclude: [],
 
-  // Useful for theme customization
-  theme: {
-    extend: {
-      animationStyles: animationStyles,
-      recipes: recipes,
-      slotRecipes: slotRecipes,
-      keyframes: keyframes,
-      layerStyles: layerStyles,
-      textStyles: textStyles,
+	// Useful for theme customization
+	theme: {
+		extend: {
+			animationStyles: animationStyles,
+			recipes: recipes,
+			slotRecipes: slotRecipes,
+			keyframes: keyframes,
+			layerStyles: layerStyles,
+			textStyles: textStyles,
 
-      tokens: {
-        colors: colors,
-        durations: durations,
-        zIndex: zIndex
-      },
+			tokens: {
+				colors: colors,
+				durations: durations,
+				zIndex: zIndex,
+			},
 
-      semanticTokens: {
-        colors: {
-          fg: {
-            default: {
-              value: {
-                _light: "{colors.gray.12}",
-                _dark: "{colors.gray.12}"
-              }
-            },
+			semanticTokens: {
+				colors: {
+					fg: {
+						default: {
+							value: {
+								_light: "{colors.gray.12}",
+								_dark: "{colors.gray.12}",
+							},
+						},
 
-            muted: {
-              value: {
-                _light: "{colors.gray.11}",
-                _dark: "{colors.gray.11}"
-              }
-            },
+						muted: {
+							value: {
+								_light: "{colors.gray.11}",
+								_dark: "{colors.gray.11}",
+							},
+						},
 
-            subtle: {
-              value: {
-                _light: "{colors.gray.10}",
-                _dark: "{colors.gray.10}"
-              }
-            }
-          },
+						subtle: {
+							value: {
+								_light: "{colors.gray.10}",
+								_dark: "{colors.gray.10}",
+							},
+						},
+					},
 
-          border: {
-            value: {
-              _light: "{colors.gray.4}",
-              _dark: "{colors.gray.4}"
-            }
-          },
+					border: {
+						value: {
+							_light: "{colors.gray.4}",
+							_dark: "{colors.gray.4}",
+						},
+					},
 
-          error: {
-            value: {
-              _light: "{colors.red.9}",
-              _dark: "{colors.red.9}"
-            }
-          },
+					error: {
+						value: {
+							_light: "{colors.red.9}",
+							_dark: "{colors.red.9}",
+						},
+					},
 
-          indigo: indigo,
-          gray: neutral,
-          red: red,
-          green: green
-        },
+					indigo: indigo,
+					gray: neutral,
+					red: red,
+					green: green,
+				},
 
-        shadows: shadows,
+				shadows: shadows,
 
-        radii: {
-          l1: {
-            value: "{radii.xs}"
-          },
+				radii: {
+					l1: {
+						value: "{radii.xs}",
+					},
 
-          l2: {
-            value: "{radii.sm}"
-          },
+					l2: {
+						value: "{radii.sm}",
+					},
 
-          l3: {
-            value: "{radii.md}"
-          }
-        }
-      }
-    },
-  },
+					l3: {
+						value: "{radii.md}",
+					},
+				},
+			},
+		},
+	},
 
-  // The output directory for your css system
-  outdir: "styled-system",
+	// The output directory for your css system
+	outdir: "styled-system",
 
-  globalCss: globalCss,
-  conditions: conditions
+	globalCss: globalCss,
+	conditions: conditions,
 });

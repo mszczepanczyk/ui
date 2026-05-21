@@ -1,2 +1,2 @@
-export const recipes = {}
-export const slotRecipes = {}
+export const recipes = {};
+export const slotRecipes = {};
