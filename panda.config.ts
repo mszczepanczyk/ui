@@ -1,19 +1,19 @@
-import { green } from "./src/theme/colors/green";
-import { red } from "./src/theme/colors/red";
-import { neutral } from "./src/theme/colors/neutral";
-import { indigo } from "./src/theme/colors/indigo";
-import { animationStyles } from "./src/theme/animation-styles";
-import { zIndex } from "./src/theme/tokens/z-index";
-import { shadows } from "./src/theme/tokens/shadows";
-import { durations } from "./src/theme/tokens/durations";
-import { colors } from "./src/theme/tokens/colors";
-import { textStyles } from "./src/theme/text-styles";
-import { layerStyles } from "./src/theme/layer-styles";
-import { keyframes } from "./src/theme/keyframes";
-import { globalCss } from "./src/theme/global-css";
-import { conditions } from "./src/theme/conditions";
-import { slotRecipes, recipes } from "./src/theme/recipes";
 import { defineConfig } from "@pandacss/dev";
+import { animationStyles } from "./src/theme/animation-styles";
+import { green } from "./src/theme/colors/green";
+import { indigo } from "./src/theme/colors/indigo";
+import { neutral } from "./src/theme/colors/neutral";
+import { red } from "./src/theme/colors/red";
+import { conditions } from "./src/theme/conditions";
+import { globalCss } from "./src/theme/global-css";
+import { keyframes } from "./src/theme/keyframes";
+import { layerStyles } from "./src/theme/layer-styles";
+import { recipes, slotRecipes } from "./src/theme/recipes";
+import { textStyles } from "./src/theme/text-styles";
+import { colors } from "./src/theme/tokens/colors";
+import { durations } from "./src/theme/tokens/durations";
+import { shadows } from "./src/theme/tokens/shadows";
+import { zIndex } from "./src/theme/tokens/z-index";
 
 export default defineConfig({
 	// Enable JSX styled factory
