@@ -1,4 +1,12 @@
 {
-	"port": 5050,
-	"plugins": ["react-cosmos-plugin-vite"]
+	"port": 5100,
+	"plugins": ["react-cosmos-plugin-vite"],
+	"userImportsPath": "src/cosmos.imports.ts",
+	"vite": {
+		"port": 5101,
+		"mainScriptUrl": "/src/main.tsx"
+	},
+	"dom": {
+		"containerQuerySelector": "#root"
+	}
 }
