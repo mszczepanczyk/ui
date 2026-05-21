@@ -84,7 +84,10 @@
 	font-style: italic;
 }
 
-/* Set as default system fonts */
+/* Set as default system fonts with consistent rendering */
 * {
 	font-family: 'Liberation Sans', Arial, Helvetica, sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	text-rendering: optimizeLegibility !important;
 }
