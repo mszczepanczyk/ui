@@ -67,7 +67,7 @@ for (const { component, fixture } of fixtures) {
 		// This ensures snapshots only break when the component changes, not when the fixture list changes
 		await expect(iframeElement).toHaveScreenshot(`${component}-${fixture}.png`, {
 			animations: "disabled",
-			maxDiffPixels: 100, // Allow minor anti-aliasing differences
+			maxDiffPixels: 0,
 		});
 	});
 }
