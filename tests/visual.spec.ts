@@ -56,16 +56,16 @@ for (const { component, fixture } of fixtures) {
 		// Navigate to the specific fixture in Cosmos
 		await page.goto(fixtureUrl, { waitUntil: "networkidle" });
 
-		// Wait for the iframe to load (Cosmos renders fixtures in an iframe)
-		// The iframe doesn't have a title, so we locate it by its position in the page
-		await page.waitForSelector("iframe", { state: "visible", timeout: 10000 });
+		// Wait for the iframe element to be present and attached
+		const iframeElement = page.locator("iframe");
+		await iframeElement.waitFor({ state: "attached", timeout: 10000 });
 
 		// Give time for any animations or async rendering to complete
 		await page.waitForTimeout(1000);
 
-		// Take a screenshot of the entire page (includes fixture in iframe)
-		await expect(page).toHaveScreenshot(`${component}-${fixture}.png`, {
-			fullPage: true,
+		// Take a screenshot of ONLY the iframe element (not the Cosmos UI)
+		// This ensures snapshots only break when the component changes, not when the fixture list changes
+		await expect(iframeElement).toHaveScreenshot(`${component}-${fixture}.png`, {
 			animations: "disabled",
 			maxDiffPixels: 100, // Allow minor anti-aliasing differences
 		});
