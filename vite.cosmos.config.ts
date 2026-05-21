@@ -12,4 +12,9 @@ export default defineConfig({
 		},
 	},
 	root: __dirname,
+	build: {
+		rollupOptions: {
+			input: resolve(__dirname, "index.html"),
+		},
+	},
 });
