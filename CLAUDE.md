@@ -96,12 +96,16 @@ npm run test:visual:update  # Update baseline snapshots
 npm run test:visual:report  # View HTML diff report
 ```
 
-Tests automatically capture screenshots of all Cosmos fixtures. When component appearance changes:
+Tests automatically capture screenshots of:
+- All Cosmos fixtures (`tests/visual.spec.ts`)
+- All example pages (`tests/examples.spec.ts`)
+
+When component appearance changes:
 1. Tests will fail showing visual diffs
 2. Open the HTML report to review side-by-side comparisons
 3. If changes are intentional, update snapshots with `npm run test:visual:update`
 
-Snapshots are stored in `tests/visual.spec.ts-snapshots/` and should be committed to git.
+Snapshots are stored in `tests/*.spec.ts-snapshots/` and should be committed to git.
 
 ### Cosmos Fixtures
 
