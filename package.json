@@ -7,15 +7,24 @@
 	"author": "mariusz.sh",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
+			"types": "./dist/src/index.d.ts",
 			"import": "./dist/index.js"
+		},
+		"./panda-preset": {
+			"types": "./dist/src/panda-preset.d.ts",
+			"import": "./dist/panda-preset.js"
+		},
+		"./styled-system/*": {
+			"types": "./styled-system/*/index.d.ts",
+			"import": "./styled-system/*/index.mjs"
 		}
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/src/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"styled-system"
 	],
 	"sideEffects": false,
 	"engines": {

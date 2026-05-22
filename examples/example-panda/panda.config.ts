@@ -1,8 +1,8 @@
 import { defineConfig } from "@pandacss/dev";
-import { pandaPreset } from "./src/panda-preset";
+import { pandaPreset } from "@mariusz.sh/ui/panda-preset";
 
 export default defineConfig({
-	// Use the library's own preset
+	// Use the library's preset
 	presets: ["@pandacss/preset-base", "@pandacss/preset-panda", pandaPreset],
 
 	// Enable JSX styled factory
@@ -19,7 +19,4 @@ export default defineConfig({
 
 	// The output directory for your css system
 	outdir: "styled-system",
-
-	// Import map for component library consumption
-	importMap: "@mariusz.sh/ui/styled-system",
 });

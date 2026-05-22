@@ -15,6 +15,8 @@ export default defineConfig(({ command }) => {
 				dts({
 					include: ["src"],
 					exclude: ["src/**/*.fixture.tsx", "src/**/*.test.tsx"],
+					pathsToAliases: false,
+					aliasesExclude: [/^styled-system/],
 				}),
 		].filter(Boolean),
 		resolve: {
@@ -27,12 +29,19 @@ export default defineConfig(({ command }) => {
 		...(isBuild && {
 			build: {
 				lib: {
-					entry: resolve(__dirname, "src/index.ts"),
+					entry: {
+						index: resolve(__dirname, "src/index.ts"),
+						"panda-preset": resolve(__dirname, "src/panda-preset.ts"),
+					},
 					formats: ["es"],
-					fileName: "index",
 				},
 				rollupOptions: {
-					external: ["react", "react-dom", "react/jsx-runtime"],
+					external: [
+						"react",
+						"react-dom",
+						"react/jsx-runtime",
+						/^styled-system\//,
+					],
 					output: {
 						preserveModules: true,
 						preserveModulesRoot: "src",

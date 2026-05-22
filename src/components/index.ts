@@ -1,3 +1,4 @@
+export type { ButtonVariantProps } from "styled-system/recipes";
 export { AbsoluteCenter, type AbsoluteCenterProps } from "./AbsoluteCenter";
 export {
 	Button,
