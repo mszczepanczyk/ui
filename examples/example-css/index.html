@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@mariusz.sh/ui css example</title>
+  <link rel="stylesheet" href="/src/main.css" />
+</head>
+
+<body>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 3rem 1rem;">
+    <div style="display: flex; flex-direction: column; gap: 3rem;">
+
+      <!-- Header -->
+      <div style="text-align: center;">
+        <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">
+          @mariusz.sh/ui Component Library
+        </h1>
+        <p style="font-size: 1.125rem; color: #666;">
+          A showcase using CSS classes directly
+        </p>
+      </div>
+
+      <!-- Button Section -->
+      <div style="padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem;">
+          Buttons
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="button button--variant_solid">Solid Button</button>
+            <button class="button button--variant_outline">Outline Button</button>
+            <button class="button button--variant_subtle">Subtle Button</button>
+            <button class="button button--variant_surface">Surface Button</button>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="button button--size_xs">Extra Small</button>
+            <button class="button button--size_sm">Small</button>
+            <button class="button button--size_md">Medium</button>
+            <button class="button button--size_lg">Large</button>
+            <button class="button button--size_xl">Extra Large</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Section -->
+      <div style="padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 8px;">
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem;">
+          Input
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 28rem;">
+          <input class="input" placeholder="Enter text..." id="mainInput"
+            oninput="document.getElementById('output').textContent = 'You typed: ' + this.value; document.getElementById('output').style.display = this.value ? 'block' : 'none';" />
+          <input class="input input--size_xs" placeholder="Extra Small Input" />
+          <input class="input input--size_sm" placeholder="Small Input" />
+          <input class="input input--size_md" placeholder="Medium Input" />
+          <input class="input input--size_lg" placeholder="Large Input" />
+          <input class="input input--size_xl" placeholder="Extra Large Input" />
+          <p id="output" style="font-size: 0.875rem; color: #666; display: none;"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

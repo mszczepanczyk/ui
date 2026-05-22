@@ -42,7 +42,7 @@ jobs:
 
       - name: Build example projects
         run: |
-          for example in example-panda example-generic; do
+          for example in example-panda example-generic example-css; do
             echo "Building $example..."
             (cd examples/$example && npm ci && npm run build)
           done
