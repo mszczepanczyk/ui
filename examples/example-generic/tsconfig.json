@@ -1,35 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "es2023",
-    "lib": [
-      "ES2023",
-      "DOM"
-    ],
-    "module": "esnext",
-    "types": [
-      "vite/client",
-      "node"
-    ],
-    "skipLibCheck": true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-    /* Paths */
-    "paths": {
-      "styled-system/*": ["./node_modules/@mariusz.sh/ui/styled-system/*"]
-    },
-    /* Linting */
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": [
-    "src",
-    "vite.config.ts"
-  ]
+	"compilerOptions": {
+		"target": "es2023",
+		"lib": ["ES2023", "DOM"],
+		"module": "esnext",
+		"types": ["vite/client", "node"],
+		"skipLibCheck": true,
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
+		"moduleDetection": "force",
+		"noEmit": true,
+		"jsx": "react-jsx",
+		/* Paths */
+		"paths": {
+			"styled-system/*": ["./node_modules/@mariusz.sh/ui/styled-system/*"]
+		},
+		/* Linting */
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"erasableSyntaxOnly": true,
+		"noFallthroughCasesInSwitch": true
+	},
+	"include": ["src", "vite.config.ts"]
 }

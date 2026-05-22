@@ -1,5 +1,5 @@
-import { defineConfig } from "@pandacss/dev";
 import { pandaPreset } from "@mariusz.sh/ui/panda-preset";
+import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
 	// Use the library's preset
@@ -19,4 +19,55 @@ export default defineConfig({
 
 	// The output directory for your css system
 	outdir: "styled-system",
+
+	// Extend theme with custom recipes
+	theme: {
+		extend: {
+			tokens: {
+				colors: {
+					mycolor: { value: "#3b82f6" },
+					mycomplexcolor: {
+						50: { value: "#fef2f2" },
+						100: { value: "#fee2e2" },
+						200: { value: "#fecaca" },
+						300: { value: "#fca5a5" },
+						400: { value: "#f87171" },
+						500: { value: "#ef4444" },
+						600: { value: "#dc2626" },
+						700: { value: "#b91c1c" },
+						800: { value: "#991b1b" },
+						900: { value: "#7f1d1d" },
+						950: { value: "#450a0a" },
+					},
+				},
+			},
+			recipes: {
+				myButton: {
+					className: "mybutton",
+					base: {
+						borderWidth: "5px",
+					},
+					defaultVariants: {
+						variant: "myvariant",
+					},
+					variants: {
+						variant: {
+							myvariant: {
+								bg: "mycomplexcolor.500",
+								color: "mycolor",
+								borderColor: "mycomplexcolor.700",
+								_hover: {
+									bg: "mycomplexcolor.600",
+									borderColor: "mycomplexcolor.800",
+								},
+								_active: {
+									bg: "mycomplexcolor.700",
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	},
 });

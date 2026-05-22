@@ -7,7 +7,15 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["src/**", "*.ts", "*.tsx", "*.json", "!styled-system", "!dist"]
+		"includes": [
+			"examples/**",
+			"src/**",
+			"*.ts",
+			"*.tsx",
+			"*.json",
+			"!styled-system",
+			"!dist"
+		]
 	},
 	"formatter": {
 		"enabled": true,

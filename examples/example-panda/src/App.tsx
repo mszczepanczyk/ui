@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
 	AbsoluteCenter,
 	Button,
@@ -9,8 +8,10 @@ import {
 	Span,
 	Spinner,
 } from "@mariusz.sh/ui";
+import { useState } from "react";
 import { css } from "../styled-system/css";
 import { Container, Stack, VStack } from "../styled-system/jsx";
+import { MyButton } from "./components/MyButton";
 
 function App() {
 	const [inputValue, setInputValue] = useState("");
@@ -82,6 +83,43 @@ function App() {
 							<Button>Second</Button>
 							<Button>Third</Button>
 						</ButtonGroup>
+					</Stack>
+				</Stack>
+
+				{/* MyButton Section */}
+				<Stack
+					gap="6"
+					p="6"
+					borderWidth="1px"
+					borderColor="border"
+					borderRadius="l2"
+				>
+					<h2
+						className={css({
+							fontSize: "2xl",
+							fontWeight: "semibold",
+							color: "fg.default",
+						})}
+					>
+						MyButton (Extended Button)
+					</h2>
+					<Stack gap="4">
+						<Group>
+							<MyButton variant="solid">Solid MyButton</MyButton>
+							<MyButton variant="outline">Outline MyButton</MyButton>
+							<MyButton variant="myvariant">My Custom Variant</MyButton>
+						</Group>
+						<Group>
+							<MyButton variant="myvariant" size="sm">
+								Small Custom
+							</MyButton>
+							<MyButton variant="myvariant" size="md">
+								Medium Custom
+							</MyButton>
+							<MyButton variant="myvariant" size="lg">
+								Large Custom
+							</MyButton>
+						</Group>
 					</Stack>
 				</Stack>
 

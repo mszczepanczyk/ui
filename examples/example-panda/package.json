@@ -1,28 +1,28 @@
 {
-  "name": "@mariusz.sh/ui-example-panda",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "description": "@mariusz.sh/ui example project using Panda CSS",
-  "scripts": {
-    "dev": "vite",
-    "build": "panda codegen && tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@mariusz.sh/ui": "file:../..",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
-  },
-  "devDependencies": {
-    "@pandacss/dev": "^1.11.1",
-    "@types/node": "^24.12.3",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "globals": "^17.6.0",
-    "postcss": "^8.5.15",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.12"
-  }
+	"name": "@mariusz.sh/ui-example-panda",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"description": "@mariusz.sh/ui example project using Panda CSS",
+	"scripts": {
+		"dev": "vite",
+		"build": "panda codegen && tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@mariusz.sh/ui": "file:../..",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6"
+	},
+	"devDependencies": {
+		"@pandacss/dev": "^1.11.1",
+		"@types/node": "^24.12.3",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.1",
+		"globals": "^17.6.0",
+		"postcss": "^8.5.15",
+		"typescript": "~6.0.2",
+		"vite": "^8.0.12"
+	}
 }

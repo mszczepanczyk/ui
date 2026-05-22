@@ -8,7 +8,10 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			// Map styled-system to the installed library's styled-system
-			"styled-system": resolve(__dirname, "./node_modules/@mariusz.sh/ui/styled-system"),
+			"styled-system": resolve(
+				__dirname,
+				"./node_modules/@mariusz.sh/ui/styled-system",
+			),
 		},
 	},
 });

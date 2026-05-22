@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
 	AbsoluteCenter,
 	Button,
@@ -9,6 +8,7 @@ import {
 	Span,
 	Spinner,
 } from "@mariusz.sh/ui";
+import { useState } from "react";
 
 function App() {
 	const [inputValue, setInputValue] = useState("");
@@ -24,7 +24,13 @@ function App() {
 			<div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
 				{/* Header */}
 				<div style={{ textAlign: "center" }}>
-					<h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem" }}>
+					<h1
+						style={{
+							fontSize: "2.5rem",
+							fontWeight: "bold",
+							marginBottom: "1rem",
+						}}
+					>
 						@mariusz.sh/ui Component Library
 					</h1>
 					<p style={{ fontSize: "1.125rem", color: "#666" }}>
@@ -49,7 +55,9 @@ function App() {
 					>
 						Buttons
 					</h2>
-					<div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+					<div
+						style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+					>
 						<Group>
 							<Button variant="solid">Solid Button</Button>
 							<Button variant="outline">Outline Button</Button>
@@ -133,9 +141,17 @@ function App() {
 					>
 						Loading States
 					</h2>
-					<div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+					<div
+						style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
+					>
 						<div>
-							<h3 style={{ fontSize: "1.125rem", fontWeight: "500", marginBottom: "1rem" }}>
+							<h3
+								style={{
+									fontSize: "1.125rem",
+									fontWeight: "500",
+									marginBottom: "1rem",
+								}}
+							>
 								Spinner
 							</h3>
 							<Group>
@@ -147,7 +163,13 @@ function App() {
 							</Group>
 						</div>
 						<div>
-							<h3 style={{ fontSize: "1.125rem", fontWeight: "500", marginBottom: "1rem" }}>
+							<h3
+								style={{
+									fontSize: "1.125rem",
+									fontWeight: "500",
+									marginBottom: "1rem",
+								}}
+							>
 								Loader
 							</h3>
 							<div>
@@ -186,9 +208,17 @@ function App() {
 					>
 						Layout Components
 					</h2>
-					<div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+					<div
+						style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
+					>
 						<div>
-							<h3 style={{ fontSize: "1.125rem", fontWeight: "500", marginBottom: "1rem" }}>
+							<h3
+								style={{
+									fontSize: "1.125rem",
+									fontWeight: "500",
+									marginBottom: "1rem",
+								}}
+							>
 								Group
 							</h3>
 							<Group>
@@ -199,7 +229,13 @@ function App() {
 						</div>
 
 						<div>
-							<h3 style={{ fontSize: "1.125rem", fontWeight: "500", marginBottom: "1rem" }}>
+							<h3
+								style={{
+									fontSize: "1.125rem",
+									fontWeight: "500",
+									marginBottom: "1rem",
+								}}
+							>
 								Span
 							</h3>
 							<Group>
@@ -210,7 +246,13 @@ function App() {
 						</div>
 
 						<div>
-							<h3 style={{ fontSize: "1.125rem", fontWeight: "500", marginBottom: "1rem" }}>
+							<h3
+								style={{
+									fontSize: "1.125rem",
+									fontWeight: "500",
+									marginBottom: "1rem",
+								}}
+							>
 								AbsoluteCenter
 							</h3>
 							<div
