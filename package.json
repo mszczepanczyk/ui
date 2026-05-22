@@ -14,9 +14,11 @@
 			"types": "./dist/src/panda-preset.d.ts",
 			"import": "./dist/panda-preset.js"
 		},
+		"./styles.css": "./dist/styles.css",
 		"./styled-system/*": {
-			"types": "./styled-system/*/index.d.ts",
-			"import": "./styled-system/*/index.mjs"
+			"types": "./styled-system/*.d.ts",
+			"import": "./styled-system/*.mjs",
+			"default": "./styled-system/*"
 		}
 	},
 	"main": "./dist/index.js",
@@ -32,7 +34,8 @@
 		"npm": ">=10"
 	},
 	"scripts": {
-		"build": "npm run build:lib",
+		"build": "npm run build:lib && npm run build:css",
+		"build:css": "panda cssgen './src/**/*.{ts,tsx}' --cwd . -o dist/styles.css",
 		"build:lib": "panda codegen && tsc -b && vite build",
 		"cosmos": "cosmos",
 		"cosmos:export": "cosmos-export",

@@ -22,4 +22,7 @@ export default defineConfig({
 
 	// Import map for component library consumption
 	importMap: "@mariusz.sh/ui/styled-system",
+
+	// Generate CSS file for generic consumers
+	emitTokensOnly: false,
 });

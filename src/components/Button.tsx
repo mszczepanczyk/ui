@@ -1,8 +1,8 @@
 "use client";
 import { ark } from "@ark-ui/react/factory";
 import { createContext, mergeProps } from "@ark-ui/react/utils";
-import { type ComponentProps, forwardRef, useMemo } from "react";
-import { styled } from "styled-system/jsx";
+import { type ButtonHTMLAttributes, forwardRef, useMemo } from "react";
+import { cx } from "styled-system/css";
 import { type ButtonVariantProps, button } from "styled-system/recipes";
 import { Group, type GroupProps } from "./Group";
 import { Loader } from "./Loader";
@@ -28,10 +28,16 @@ interface ButtonLoadingProps {
 	spinnerPlacement?: "start" | "end" | undefined;
 }
 
-const BaseButton = styled(ark.button, button);
-type BaseButtonProps = ComponentProps<typeof BaseButton>;
-
-export interface ButtonProps extends BaseButtonProps, ButtonLoadingProps {}
+export interface ButtonProps
+	extends ButtonHTMLAttributes<HTMLButtonElement>,
+		ButtonVariantProps,
+		ButtonLoadingProps {
+	/**
+	 * If `true`, the button will be rendered as a child element.
+	 * @default false
+	 */
+	asChild?: boolean | undefined;
+}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	function Button(props, ref) {
@@ -47,17 +53,25 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			children,
 			spinner,
 			spinnerPlacement,
+			asChild,
+			className,
 			...rest
 		} = buttonProps;
+
+		const [variantProps, htmlProps] = button.splitVariantProps(rest);
+		const recipeClasses = button(variantProps);
+
 		return (
-			<BaseButton
+			<ark.button
 				type="button"
 				ref={ref}
-				{...rest}
+				asChild={asChild}
+				className={cx(recipeClasses, className)}
+				{...htmlProps}
 				data-loading={loading ? "" : undefined}
-				disabled={loading || rest.disabled}
+				disabled={loading || htmlProps.disabled}
 			>
-				{!props.asChild && loading ? (
+				{loading && !asChild ? (
 					<Loader
 						spinner={spinner}
 						text={loadingText}
@@ -68,7 +82,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				) : (
 					children
 				)}
-			</BaseButton>
+			</ark.button>
 		);
 	},
 );
