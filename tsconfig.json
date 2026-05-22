@@ -5,6 +5,7 @@
 		"module": "esnext",
 		"types": ["vite/client", "node"],
 		"skipLibCheck": true,
+		"ignoreDeprecations": "6.0", // parkui cli relies on deprecated baseUrl
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
@@ -21,6 +22,7 @@
 		"noFallthroughCasesInSwitch": true,
 
 		/* Paths */
+		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
 			"styled-system/*": ["./styled-system/*"]
