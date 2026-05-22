@@ -24,26 +24,39 @@ const __dirname = path.dirname(__filename);
  * This eliminates the need to manually maintain a fixture list.
  */
 async function discoverFixtures() {
-	const fixtureFiles = globSync("src/components/*.fixture.tsx", {
+	const fixtureFiles = globSync("src/**/*.fixture.{tsx,mdx}", {
 		cwd: path.resolve(__dirname, ".."),
 	});
 
-	const fixtures: Array<{ component: string; fixture: string }> = [];
+	const fixtures: Array<{
+		component: string;
+		fixture: string;
+		fixtureId: { path: string; name?: string };
+	}> = [];
 
 	for (const filePath of fixtureFiles) {
-		const componentName = path.basename(filePath, ".fixture.tsx");
-		const fullPath = path.resolve(__dirname, "..", filePath);
+		const isMdx = filePath.endsWith(".mdx");
+		const extension = isMdx ? ".fixture.mdx" : ".fixture.tsx";
+		const componentName = path.basename(filePath, extension);
 
-		// Dynamically import the fixture file
-		const fixtureModule = await import(fullPath);
-		const fixtureExports = fixtureModule.default || {};
-
-		// Add all exported fixtures
-		for (const fixtureName of Object.keys(fixtureExports)) {
+		if (isMdx) {
 			fixtures.push({
 				component: componentName,
-				fixture: fixtureName,
+				fixture: "default",
+				fixtureId: { path: filePath },
 			});
+		} else {
+			const fullPath = path.resolve(__dirname, "..", filePath);
+			const fixtureModule = await import(fullPath);
+			const fixtureExports = fixtureModule.default || {};
+
+			for (const fixtureName of Object.keys(fixtureExports)) {
+				fixtures.push({
+					component: componentName,
+					fixture: fixtureName,
+					fixtureId: { path: filePath, name: fixtureName },
+				});
+			}
 		}
 	}
 
@@ -59,14 +72,11 @@ async function discoverFixtures() {
 // Discover all fixtures at test time
 const fixtures = await discoverFixtures();
 
-for (const { component, fixture } of fixtures) {
+for (const { component, fixture, fixtureId } of fixtures) {
 	test(`${component} - ${fixture}`, async ({ page }) => {
 		// Build the fixture URL using Cosmos URL structure
 		const fixtureUrl = `/?fixture=${encodeURIComponent(
-			JSON.stringify({
-				path: `src/components/${component}.fixture.tsx`,
-				name: fixture,
-			}),
+			JSON.stringify(fixtureId),
 		)}`;
 
 		// Navigate to the specific fixture in Cosmos
