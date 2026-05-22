@@ -8,5 +8,12 @@
 	},
 	"dom": {
 		"containerQuerySelector": "#root"
+	},
+	"ui": {
+		"router": {
+			"initialFixtureId": {
+				"path": "src/README.fixture.mdx"
+			}
+		}
 	}
 }
