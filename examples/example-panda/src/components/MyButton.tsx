@@ -6,11 +6,14 @@ import { myButton } from "../../styled-system/recipes";
 // Create a styled button using the custom recipe
 const StyledMyButton = styled(Button, myButton);
 
-export type MyButtonProps = ComponentProps<typeof StyledMyButton>;
+export type MyButtonProps = ComponentProps<typeof StyledMyButton> & {
+	myprop?: boolean;
+};
 
 export const MyButton = forwardRef<HTMLButtonElement, MyButtonProps>(
 	(props, ref) => {
-		return <StyledMyButton ref={ref} {...props} />;
+		const { myprop, ...rest } = props;
+		return <StyledMyButton ref={ref} {...rest} />;
 	},
 );
 
