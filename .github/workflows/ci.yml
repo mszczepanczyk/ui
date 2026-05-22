@@ -40,6 +40,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Build example projects
+        run: |
+          cd examples/example-panda
+          npm ci
+          npm run build
+
       - name: Visual regression tests
         run: npm run test:visual
 

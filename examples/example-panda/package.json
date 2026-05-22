@@ -1,14 +1,12 @@
 {
-  "name": "@mariusz.sh/ui-example",
+  "name": "@mariusz.sh/ui-example-panda",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "@mariusz.sh/ui example project",
+  "description": "@mariusz.sh/ui example project using Panda CSS",
   "scripts": {
     "dev": "vite",
-    "build": "panda codegen && vite build",
-    "build:check": "panda codegen && tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "panda codegen && tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
