@@ -1,14 +1,1 @@
-/**
- * Declare layers on separate lines to prevent Panda CSS (or PostCSS?) from
- * concatenating them into a single statement:
- *
- * `@layer reset, base;@layer reset {`
- *
- * which causes styles to not render with Vite dev + React Cosmos + MDX decorator.
- */
-
-@layer reset;
-@layer base;
-@layer tokens;
-@layer recipes;
-@layer utilities;
+@layer reset, base, tokens, recipes, utilities;

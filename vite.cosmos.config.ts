@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 
 // Vite config specifically for Cosmos (no library mode)
 export default defineConfig({
-	plugins: [react(), mdx()],
+	plugins: [react(), mdx({ providerImportSource: "@mdx-js/react" })],
 	resolve: {
 		alias: {
 			"@": resolve(__dirname, "./src"),
