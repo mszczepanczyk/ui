@@ -19,5 +19,22 @@ export const globalCss = {
 		h4: { textStyle: "2xl", fontWeight: "semibold" },
 		h5: { textStyle: "xl", fontWeight: "semibold" },
 		h6: { textStyle: "lg", fontWeight: "semibold" },
+		code: {
+			fontFamily: "code",
+			fontVariantNumeric: "tabular-nums",
+			fontWeight: "medium",
+		},
+		kbd: {
+			fontFamily: "code",
+			fontWeight: "medium",
+			userSelect: "none",
+		},
+		a: {
+			color: "colorPalette.default",
+			textDecoration: "underline",
+		},
+		p: {
+			textStyle: "md",
+		},
 	},
 };

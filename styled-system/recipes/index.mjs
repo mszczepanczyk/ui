@@ -8,3 +8,6 @@ export * from './heading.mjs';
 export * from './card.mjs';
 export * from './navbar.mjs';
 export * from './layout.mjs';
+export * from './code.mjs';
+export * from './text.mjs';
+export * from './kbd.mjs';

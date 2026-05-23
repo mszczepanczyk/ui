@@ -9,3 +9,6 @@ export * from './heading';
 export * from './card';
 export * from './navbar';
 export * from './layout';
+export * from './code';
+export * from './text';
+export * from './kbd';

@@ -21,9 +21,11 @@ export {
 	CardTitle,
 	type CardTitleProps,
 } from "./Card";
+export { Code, type CodeProps } from "./Code";
 export { Group, type GroupProps } from "./Group";
 export { Heading, type HeadingProps } from "./Heading";
 export { Input, type InputProps } from "./Input";
+export { Kbd, type KbdProps } from "./Kbd";
 export {
 	Layout,
 	LayoutBody,
@@ -58,3 +60,4 @@ export {
 } from "./Navbar";
 export { Span, type SpanProps } from "./Span";
 export { Spinner, type SpinnerProps } from "./Spinner";
+export { Text, type TextProps } from "./Text";
