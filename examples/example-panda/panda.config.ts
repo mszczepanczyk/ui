@@ -41,33 +41,6 @@ export default defineConfig({
 					},
 				},
 			},
-			recipes: {
-				myButton: {
-					className: "mybutton",
-					base: {
-						borderWidth: "5px",
-					},
-					defaultVariants: {
-						variant: "myvariant",
-					},
-					variants: {
-						variant: {
-							myvariant: {
-								bg: "mycomplexcolor.500",
-								color: "mycolor",
-								borderColor: "mycomplexcolor.700",
-								_hover: {
-									bg: "mycomplexcolor.600",
-									borderColor: "mycomplexcolor.800",
-								},
-								_active: {
-									bg: "mycomplexcolor.700",
-								},
-							},
-						},
-					},
-				},
-			},
 		},
 	},
 });

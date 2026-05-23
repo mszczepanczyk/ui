@@ -105,19 +105,29 @@ function App() {
 					</h2>
 					<Stack gap="4">
 						<Group>
-							<MyButton variant="solid">Solid MyButton</MyButton>
-							<MyButton variant="outline">Outline MyButton</MyButton>
-							<MyButton variant="myvariant">My Custom Variant</MyButton>
+							<MyButton intent="danger">Danger Intent</MyButton>
+							<MyButton intent="success">Success Intent</MyButton>
+							<MyButton intent="danger" rounded>
+								Rounded Danger
+							</MyButton>
 						</Group>
 						<Group>
-							<MyButton variant="myvariant" size="sm">
-								Small Custom
+							<MyButton intent="danger" size="sm">
+								Small
 							</MyButton>
-							<MyButton variant="myvariant" size="md">
-								Medium Custom
+							<MyButton intent="danger" size="md">
+								Medium
 							</MyButton>
-							<MyButton variant="myvariant" size="lg">
-								Large Custom
+							<MyButton intent="danger" size="lg">
+								Large
+							</MyButton>
+						</Group>
+						<Group>
+							<MyButton
+								intent="danger"
+								confirmMessage="Are you sure you want to delete?"
+							>
+								Delete with Confirm
 							</MyButton>
 						</Group>
 					</Stack>
