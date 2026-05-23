@@ -1,9 +1,36 @@
 import { definePreset } from "@pandacss/dev";
 import { animationStyles } from "./theme/animation-styles";
+import { amber } from "./theme/colors/amber";
+import { blue } from "./theme/colors/blue";
+import { bronze } from "./theme/colors/bronze";
+import { brown } from "./theme/colors/brown";
+import { crimson } from "./theme/colors/crimson";
+import { cyan } from "./theme/colors/cyan";
+import { gold } from "./theme/colors/gold";
+import { grass } from "./theme/colors/grass";
 import { green } from "./theme/colors/green";
 import { indigo } from "./theme/colors/indigo";
+import { iris } from "./theme/colors/iris";
+import { jade } from "./theme/colors/jade";
+import { lime } from "./theme/colors/lime";
+import { mauve } from "./theme/colors/mauve";
+import { mint } from "./theme/colors/mint";
 import { neutral } from "./theme/colors/neutral";
+import { olive } from "./theme/colors/olive";
+import { orange } from "./theme/colors/orange";
+import { pink } from "./theme/colors/pink";
+import { plum } from "./theme/colors/plum";
+import { purple } from "./theme/colors/purple";
 import { red } from "./theme/colors/red";
+import { ruby } from "./theme/colors/ruby";
+import { sage } from "./theme/colors/sage";
+import { sand } from "./theme/colors/sand";
+import { sky } from "./theme/colors/sky";
+import { slate } from "./theme/colors/slate";
+import { teal } from "./theme/colors/teal";
+import { tomato } from "./theme/colors/tomato";
+import { violet } from "./theme/colors/violet";
+import { yellow } from "./theme/colors/yellow";
 import { conditions } from "./theme/conditions";
 import { globalCss } from "./theme/global-css";
 import { keyframes } from "./theme/keyframes";
@@ -72,10 +99,37 @@ export const pandaPreset = definePreset({
 						},
 					},
 
-					indigo,
+					amber,
+					blue,
+					bronze,
+					brown,
+					crimson,
+					cyan,
+					gold,
+					grass,
 					gray: neutral,
-					red,
 					green,
+					indigo,
+					iris,
+					jade,
+					lime,
+					mauve,
+					mint,
+					olive,
+					orange,
+					pink,
+					plum,
+					purple,
+					red,
+					ruby,
+					sage,
+					sand,
+					sky,
+					slate,
+					teal,
+					tomato,
+					violet,
+					yellow,
 				},
 
 				shadows,
