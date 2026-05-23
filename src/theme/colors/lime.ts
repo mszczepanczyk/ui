@@ -27,17 +27,27 @@ export const lime = defineSemanticTokens.colors({
 	a12: { value: { _light: "#1e2900e3", _dark: "#e9febff7" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.lime.9}", _dark: "{colors.lime.9}" } },
-			hover: { value: { _light: "{colors.lime.10}", _dark: "{colors.lime.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.lime.9}", _dark: "{colors.lime.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.lime.10}", _dark: "{colors.lime.10}" },
+			},
 		},
-		fg: { DEFAULT: { value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" } } },
+		fg: {
+			DEFAULT: {
+				value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" },
+			},
+		},
 	},
 	subtle: {
 		bg: {
 			DEFAULT: {
 				value: { _light: "{colors.lime.a3}", _dark: "{colors.lime.a3}" },
 			},
-			hover: { value: { _light: "{colors.lime.a4}", _dark: "{colors.lime.a4}" } },
+			hover: {
+				value: { _light: "{colors.lime.a4}", _dark: "{colors.lime.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.lime.a5}", _dark: "{colors.lime.a5}" },
 			},
@@ -61,7 +71,9 @@ export const lime = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.lime.a6}", _dark: "{colors.lime.a6}" },
 			},
-			hover: { value: { _light: "{colors.lime.a7}", _dark: "{colors.lime.a7}" } },
+			hover: {
+				value: { _light: "{colors.lime.a7}", _dark: "{colors.lime.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +83,9 @@ export const lime = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.lime.a2}", _dark: "{colors.lime.a2}" } },
+			hover: {
+				value: { _light: "{colors.lime.a2}", _dark: "{colors.lime.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.lime.a3}", _dark: "{colors.lime.a3}" },
 			},
@@ -89,7 +103,9 @@ export const lime = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.lime.a3}", _dark: "{colors.lime.a3}" } },
+			hover: {
+				value: { _light: "{colors.lime.a3}", _dark: "{colors.lime.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.lime.a4}", _dark: "{colors.lime.a4}" },
 			},

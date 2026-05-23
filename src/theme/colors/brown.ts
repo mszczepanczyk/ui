@@ -27,8 +27,12 @@ export const brown = defineSemanticTokens.colors({
 	a12: { value: { _light: "#140600d1", _dark: "#feecd4f2" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.brown.9}", _dark: "{colors.brown.9}" } },
-			hover: { value: { _light: "{colors.brown.10}", _dark: "{colors.brown.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.brown.9}", _dark: "{colors.brown.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.brown.10}", _dark: "{colors.brown.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const brown = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.brown.a3}", _dark: "{colors.brown.a3}" },
 			},
-			hover: { value: { _light: "{colors.brown.a4}", _dark: "{colors.brown.a4}" } },
+			hover: {
+				value: { _light: "{colors.brown.a4}", _dark: "{colors.brown.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.brown.a5}", _dark: "{colors.brown.a5}" },
 			},
@@ -61,7 +67,9 @@ export const brown = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.brown.a6}", _dark: "{colors.brown.a6}" },
 			},
-			hover: { value: { _light: "{colors.brown.a7}", _dark: "{colors.brown.a7}" } },
+			hover: {
+				value: { _light: "{colors.brown.a7}", _dark: "{colors.brown.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const brown = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.brown.a2}", _dark: "{colors.brown.a2}" } },
+			hover: {
+				value: { _light: "{colors.brown.a2}", _dark: "{colors.brown.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.brown.a3}", _dark: "{colors.brown.a3}" },
 			},
@@ -89,7 +99,9 @@ export const brown = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.brown.a3}", _dark: "{colors.brown.a3}" } },
+			hover: {
+				value: { _light: "{colors.brown.a3}", _dark: "{colors.brown.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.brown.a4}", _dark: "{colors.brown.a4}" },
 			},

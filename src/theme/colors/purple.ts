@@ -27,8 +27,12 @@ export const purple = defineSemanticTokens.colors({
 	a12: { value: { _light: "#250049df", _dark: "#f1ddfffa" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.purple.9}", _dark: "{colors.purple.9}" } },
-			hover: { value: { _light: "{colors.purple.10}", _dark: "{colors.purple.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.purple.9}", _dark: "{colors.purple.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.purple.10}", _dark: "{colors.purple.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const purple = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.purple.a3}", _dark: "{colors.purple.a3}" },
 			},
-			hover: { value: { _light: "{colors.purple.a4}", _dark: "{colors.purple.a4}" } },
+			hover: {
+				value: { _light: "{colors.purple.a4}", _dark: "{colors.purple.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.purple.a5}", _dark: "{colors.purple.a5}" },
 			},
@@ -61,7 +67,9 @@ export const purple = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.purple.a6}", _dark: "{colors.purple.a6}" },
 			},
-			hover: { value: { _light: "{colors.purple.a7}", _dark: "{colors.purple.a7}" } },
+			hover: {
+				value: { _light: "{colors.purple.a7}", _dark: "{colors.purple.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const purple = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.purple.a2}", _dark: "{colors.purple.a2}" } },
+			hover: {
+				value: { _light: "{colors.purple.a2}", _dark: "{colors.purple.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.purple.a3}", _dark: "{colors.purple.a3}" },
 			},
@@ -89,7 +99,9 @@ export const purple = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.purple.a3}", _dark: "{colors.purple.a3}" } },
+			hover: {
+				value: { _light: "{colors.purple.a3}", _dark: "{colors.purple.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.purple.a4}", _dark: "{colors.purple.a4}" },
 			},

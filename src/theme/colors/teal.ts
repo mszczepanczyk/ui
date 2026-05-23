@@ -27,8 +27,12 @@ export const teal = defineSemanticTokens.colors({
 	a12: { value: { _light: "#00332df2", _dark: "#b8ffebef" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.teal.9}", _dark: "{colors.teal.9}" } },
-			hover: { value: { _light: "{colors.teal.10}", _dark: "{colors.teal.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.teal.9}", _dark: "{colors.teal.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.teal.10}", _dark: "{colors.teal.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const teal = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.teal.a3}", _dark: "{colors.teal.a3}" },
 			},
-			hover: { value: { _light: "{colors.teal.a4}", _dark: "{colors.teal.a4}" } },
+			hover: {
+				value: { _light: "{colors.teal.a4}", _dark: "{colors.teal.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.teal.a5}", _dark: "{colors.teal.a5}" },
 			},
@@ -61,7 +67,9 @@ export const teal = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.teal.a6}", _dark: "{colors.teal.a6}" },
 			},
-			hover: { value: { _light: "{colors.teal.a7}", _dark: "{colors.teal.a7}" } },
+			hover: {
+				value: { _light: "{colors.teal.a7}", _dark: "{colors.teal.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const teal = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.teal.a2}", _dark: "{colors.teal.a2}" } },
+			hover: {
+				value: { _light: "{colors.teal.a2}", _dark: "{colors.teal.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.teal.a3}", _dark: "{colors.teal.a3}" },
 			},
@@ -89,7 +99,9 @@ export const teal = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.teal.a3}", _dark: "{colors.teal.a3}" } },
+			hover: {
+				value: { _light: "{colors.teal.a3}", _dark: "{colors.teal.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.teal.a4}", _dark: "{colors.teal.a4}" },
 			},

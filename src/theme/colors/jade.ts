@@ -27,8 +27,12 @@ export const jade = defineSemanticTokens.colors({
 	a12: { value: { _light: "#002217e2", _dark: "#b8ffe1ef" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.jade.9}", _dark: "{colors.jade.9}" } },
-			hover: { value: { _light: "{colors.jade.10}", _dark: "{colors.jade.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.jade.9}", _dark: "{colors.jade.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.jade.10}", _dark: "{colors.jade.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const jade = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.jade.a3}", _dark: "{colors.jade.a3}" },
 			},
-			hover: { value: { _light: "{colors.jade.a4}", _dark: "{colors.jade.a4}" } },
+			hover: {
+				value: { _light: "{colors.jade.a4}", _dark: "{colors.jade.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.jade.a5}", _dark: "{colors.jade.a5}" },
 			},
@@ -61,7 +67,9 @@ export const jade = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.jade.a6}", _dark: "{colors.jade.a6}" },
 			},
-			hover: { value: { _light: "{colors.jade.a7}", _dark: "{colors.jade.a7}" } },
+			hover: {
+				value: { _light: "{colors.jade.a7}", _dark: "{colors.jade.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const jade = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.jade.a2}", _dark: "{colors.jade.a2}" } },
+			hover: {
+				value: { _light: "{colors.jade.a2}", _dark: "{colors.jade.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.jade.a3}", _dark: "{colors.jade.a3}" },
 			},
@@ -89,7 +99,9 @@ export const jade = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.jade.a3}", _dark: "{colors.jade.a3}" } },
+			hover: {
+				value: { _light: "{colors.jade.a3}", _dark: "{colors.jade.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.jade.a4}", _dark: "{colors.jade.a4}" },
 			},

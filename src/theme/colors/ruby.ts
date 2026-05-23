@@ -27,8 +27,12 @@ export const ruby = defineSemanticTokens.colors({
 	a12: { value: { _light: "#550016e8", _dark: "#ffd3e2fe" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.ruby.9}", _dark: "{colors.ruby.9}" } },
-			hover: { value: { _light: "{colors.ruby.10}", _dark: "{colors.ruby.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.ruby.9}", _dark: "{colors.ruby.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.ruby.10}", _dark: "{colors.ruby.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const ruby = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.ruby.a3}", _dark: "{colors.ruby.a3}" },
 			},
-			hover: { value: { _light: "{colors.ruby.a4}", _dark: "{colors.ruby.a4}" } },
+			hover: {
+				value: { _light: "{colors.ruby.a4}", _dark: "{colors.ruby.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.ruby.a5}", _dark: "{colors.ruby.a5}" },
 			},
@@ -61,7 +67,9 @@ export const ruby = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.ruby.a6}", _dark: "{colors.ruby.a6}" },
 			},
-			hover: { value: { _light: "{colors.ruby.a7}", _dark: "{colors.ruby.a7}" } },
+			hover: {
+				value: { _light: "{colors.ruby.a7}", _dark: "{colors.ruby.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const ruby = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.ruby.a2}", _dark: "{colors.ruby.a2}" } },
+			hover: {
+				value: { _light: "{colors.ruby.a2}", _dark: "{colors.ruby.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.ruby.a3}", _dark: "{colors.ruby.a3}" },
 			},
@@ -89,7 +99,9 @@ export const ruby = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.ruby.a3}", _dark: "{colors.ruby.a3}" } },
+			hover: {
+				value: { _light: "{colors.ruby.a3}", _dark: "{colors.ruby.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.ruby.a4}", _dark: "{colors.ruby.a4}" },
 			},

@@ -62,40 +62,358 @@ export const pandaPreset = definePreset({
 
 			semanticTokens: {
 				colors: {
+					// Foreground colors (text)
 					fg: {
 						default: {
 							value: {
-								_light: "{colors.gray.12}",
-								_dark: "{colors.gray.12}",
+								_light: "{colors.slate.12}",
+								_dark: "{colors.slate.12}",
 							},
 						},
 
 						muted: {
 							value: {
-								_light: "{colors.gray.11}",
-								_dark: "{colors.gray.11}",
+								_light: "{colors.slate.11}",
+								_dark: "{colors.slate.11}",
 							},
 						},
 
 						subtle: {
 							value: {
-								_light: "{colors.gray.10}",
-								_dark: "{colors.gray.10}",
+								_light: "{colors.slate.10}",
+								_dark: "{colors.slate.10}",
+							},
+						},
+
+						disabled: {
+							value: {
+								_light: "{colors.slate.8}",
+								_dark: "{colors.slate.8}",
+							},
+						},
+
+						inverted: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.black}",
 							},
 						},
 					},
 
+					// Background colors
+					bg: {
+						canvas: {
+							value: {
+								_light: "{colors.slate.1}",
+								_dark: "{colors.slate.1}",
+							},
+						},
+
+						default: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.slate.2}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.slate.2}",
+								_dark: "{colors.slate.3}",
+							},
+						},
+
+						subtle: {
+							value: {
+								_light: "{colors.slate.3}",
+								_dark: "{colors.slate.4}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.slate.4}",
+								_dark: "{colors.slate.5}",
+							},
+						},
+
+						disabled: {
+							value: {
+								_light: "{colors.slate.3}",
+								_dark: "{colors.slate.4}",
+							},
+						},
+					},
+
+					// Border colors
 					border: {
-						value: {
-							_light: "{colors.gray.4}",
-							_dark: "{colors.gray.4}",
+						default: {
+							value: {
+								_light: "{colors.slate.6}",
+								_dark: "{colors.slate.6}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.slate.5}",
+								_dark: "{colors.slate.5}",
+							},
+						},
+
+						subtle: {
+							value: {
+								_light: "{colors.slate.4}",
+								_dark: "{colors.slate.4}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.slate.7}",
+								_dark: "{colors.slate.7}",
+							},
+						},
+
+						disabled: {
+							value: {
+								_light: "{colors.slate.4}",
+								_dark: "{colors.slate.4}",
+							},
+						},
+
+						outline: {
+							value: {
+								_light: "{colors.slate.8}",
+								_dark: "{colors.slate.8}",
+							},
+						},
+					},
+
+					// Accent (primary) color - Nano uses a cyan-blue #1174c0
+					accent: {
+						default: {
+							value: {
+								_light: "{colors.blue.9}",
+								_dark: "{colors.blue.9}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.blue.10}",
+								_dark: "{colors.blue.10}",
+							},
+						},
+
+						fg: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.white}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.blue.a3}",
+								_dark: "{colors.blue.a3}",
+							},
+						},
+
+						subtle: {
+							value: {
+								_light: "{colors.blue.a4}",
+								_dark: "{colors.blue.a4}",
+							},
+						},
+
+						text: {
+							value: {
+								_light: "{colors.blue.11}",
+								_dark: "{colors.blue.11}",
+							},
+						},
+					},
+
+					// Status colors
+					success: {
+						default: {
+							value: {
+								_light: "{colors.green.9}",
+								_dark: "{colors.green.9}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.green.10}",
+								_dark: "{colors.green.10}",
+							},
+						},
+
+						fg: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.white}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.green.a3}",
+								_dark: "{colors.green.a3}",
+							},
+						},
+
+						text: {
+							value: {
+								_light: "{colors.green.11}",
+								_dark: "{colors.green.11}",
+							},
+						},
+					},
+
+					warning: {
+						default: {
+							value: {
+								_light: "{colors.amber.9}",
+								_dark: "{colors.amber.9}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.amber.10}",
+								_dark: "{colors.amber.10}",
+							},
+						},
+
+						fg: {
+							value: {
+								_light: "{colors.black}",
+								_dark: "{colors.black}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.amber.a3}",
+								_dark: "{colors.amber.a3}",
+							},
+						},
+
+						text: {
+							value: {
+								_light: "{colors.amber.11}",
+								_dark: "{colors.amber.11}",
+							},
 						},
 					},
 
 					error: {
+						default: {
+							value: {
+								_light: "{colors.red.9}",
+								_dark: "{colors.red.9}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.red.10}",
+								_dark: "{colors.red.10}",
+							},
+						},
+
+						fg: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.white}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.red.a3}",
+								_dark: "{colors.red.a3}",
+							},
+						},
+
+						text: {
+							value: {
+								_light: "{colors.red.11}",
+								_dark: "{colors.red.11}",
+							},
+						},
+					},
+
+					info: {
+						default: {
+							value: {
+								_light: "{colors.blue.9}",
+								_dark: "{colors.blue.9}",
+							},
+						},
+
+						emphasized: {
+							value: {
+								_light: "{colors.blue.10}",
+								_dark: "{colors.blue.10}",
+							},
+						},
+
+						fg: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.white}",
+							},
+						},
+
+						muted: {
+							value: {
+								_light: "{colors.blue.a3}",
+								_dark: "{colors.blue.a3}",
+							},
+						},
+
+						text: {
+							value: {
+								_light: "{colors.blue.11}",
+								_dark: "{colors.blue.11}",
+							},
+						},
+					},
+
+					// Highlight (selection) color - Nano uses #44a1d9
+					highlight: {
+						bg: {
+							value: {
+								_light: "{colors.blue.a4}",
+								_dark: "{colors.blue.a4}",
+							},
+						},
+
+						fg: {
+							value: {
+								_light: "{colors.blue.12}",
+								_dark: "{colors.blue.12}",
+							},
+						},
+					},
+
+					// Focus ring color
+					focusRing: {
 						value: {
-							_light: "{colors.red.9}",
-							_dark: "{colors.red.9}",
+							_light: "{colors.blue.8}",
+							_dark: "{colors.blue.8}",
+						},
+					},
+
+					// Overlay/mask background - Nano uses rgba(0, 0, 0, 0.4)
+					overlay: {
+						value: {
+							_light: "{colors.black.a6}",
+							_dark: "{colors.black.a8}",
 						},
 					},
 

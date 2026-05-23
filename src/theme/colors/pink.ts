@@ -27,8 +27,12 @@ export const pink = defineSemanticTokens.colors({
 	a12: { value: { _light: "#59003bed", _dark: "#ffd3ecfd" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.pink.9}", _dark: "{colors.pink.9}" } },
-			hover: { value: { _light: "{colors.pink.10}", _dark: "{colors.pink.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.pink.9}", _dark: "{colors.pink.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.pink.10}", _dark: "{colors.pink.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const pink = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.pink.a3}", _dark: "{colors.pink.a3}" },
 			},
-			hover: { value: { _light: "{colors.pink.a4}", _dark: "{colors.pink.a4}" } },
+			hover: {
+				value: { _light: "{colors.pink.a4}", _dark: "{colors.pink.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.pink.a5}", _dark: "{colors.pink.a5}" },
 			},
@@ -61,7 +67,9 @@ export const pink = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.pink.a6}", _dark: "{colors.pink.a6}" },
 			},
-			hover: { value: { _light: "{colors.pink.a7}", _dark: "{colors.pink.a7}" } },
+			hover: {
+				value: { _light: "{colors.pink.a7}", _dark: "{colors.pink.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const pink = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.pink.a2}", _dark: "{colors.pink.a2}" } },
+			hover: {
+				value: { _light: "{colors.pink.a2}", _dark: "{colors.pink.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.pink.a3}", _dark: "{colors.pink.a3}" },
 			},
@@ -89,7 +99,9 @@ export const pink = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.pink.a3}", _dark: "{colors.pink.a3}" } },
+			hover: {
+				value: { _light: "{colors.pink.a3}", _dark: "{colors.pink.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.pink.a4}", _dark: "{colors.pink.a4}" },
 			},

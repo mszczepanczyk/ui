@@ -27,8 +27,12 @@ export const crimson = defineSemanticTokens.colors({
 	a12: { value: { _light: "#530026e9", _dark: "#ffd5eafd" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.crimson.9}", _dark: "{colors.crimson.9}" } },
-			hover: { value: { _light: "{colors.crimson.10}", _dark: "{colors.crimson.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.crimson.9}", _dark: "{colors.crimson.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.crimson.10}", _dark: "{colors.crimson.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,14 +41,19 @@ export const crimson = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.crimson.a3}", _dark: "{colors.crimson.a3}" },
 			},
-			hover: { value: { _light: "{colors.crimson.a4}", _dark: "{colors.crimson.a4}" } },
+			hover: {
+				value: { _light: "{colors.crimson.a4}", _dark: "{colors.crimson.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.crimson.a5}", _dark: "{colors.crimson.a5}" },
 			},
 		},
 		fg: {
 			DEFAULT: {
-				value: { _light: "{colors.crimson.a11}", _dark: "{colors.crimson.a11}" },
+				value: {
+					_light: "{colors.crimson.a11}",
+					_dark: "{colors.crimson.a11}",
+				},
 			},
 		},
 	},
@@ -61,17 +70,24 @@ export const crimson = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.crimson.a6}", _dark: "{colors.crimson.a6}" },
 			},
-			hover: { value: { _light: "{colors.crimson.a7}", _dark: "{colors.crimson.a7}" } },
+			hover: {
+				value: { _light: "{colors.crimson.a7}", _dark: "{colors.crimson.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
-				value: { _light: "{colors.crimson.a11}", _dark: "{colors.crimson.a11}" },
+				value: {
+					_light: "{colors.crimson.a11}",
+					_dark: "{colors.crimson.a11}",
+				},
 			},
 		},
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.crimson.a2}", _dark: "{colors.crimson.a2}" } },
+			hover: {
+				value: { _light: "{colors.crimson.a2}", _dark: "{colors.crimson.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.crimson.a3}", _dark: "{colors.crimson.a3}" },
 			},
@@ -83,20 +99,28 @@ export const crimson = defineSemanticTokens.colors({
 		},
 		fg: {
 			DEFAULT: {
-				value: { _light: "{colors.crimson.a11}", _dark: "{colors.crimson.a11}" },
+				value: {
+					_light: "{colors.crimson.a11}",
+					_dark: "{colors.crimson.a11}",
+				},
 			},
 		},
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.crimson.a3}", _dark: "{colors.crimson.a3}" } },
+			hover: {
+				value: { _light: "{colors.crimson.a3}", _dark: "{colors.crimson.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.crimson.a4}", _dark: "{colors.crimson.a4}" },
 			},
 		},
 		fg: {
 			DEFAULT: {
-				value: { _light: "{colors.crimson.a11}", _dark: "{colors.crimson.a11}" },
+				value: {
+					_light: "{colors.crimson.a11}",
+					_dark: "{colors.crimson.a11}",
+				},
 			},
 		},
 	},

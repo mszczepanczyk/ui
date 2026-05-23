@@ -27,8 +27,12 @@ export const cyan = defineSemanticTokens.colors({
 	a12: { value: { _light: "#00323ef2", _dark: "#bbf3fef7" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.cyan.9}", _dark: "{colors.cyan.9}" } },
-			hover: { value: { _light: "{colors.cyan.10}", _dark: "{colors.cyan.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.cyan.9}", _dark: "{colors.cyan.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.cyan.10}", _dark: "{colors.cyan.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const cyan = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.cyan.a3}", _dark: "{colors.cyan.a3}" },
 			},
-			hover: { value: { _light: "{colors.cyan.a4}", _dark: "{colors.cyan.a4}" } },
+			hover: {
+				value: { _light: "{colors.cyan.a4}", _dark: "{colors.cyan.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.cyan.a5}", _dark: "{colors.cyan.a5}" },
 			},
@@ -61,7 +67,9 @@ export const cyan = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.cyan.a6}", _dark: "{colors.cyan.a6}" },
 			},
-			hover: { value: { _light: "{colors.cyan.a7}", _dark: "{colors.cyan.a7}" } },
+			hover: {
+				value: { _light: "{colors.cyan.a7}", _dark: "{colors.cyan.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const cyan = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.cyan.a2}", _dark: "{colors.cyan.a2}" } },
+			hover: {
+				value: { _light: "{colors.cyan.a2}", _dark: "{colors.cyan.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.cyan.a3}", _dark: "{colors.cyan.a3}" },
 			},
@@ -89,7 +99,9 @@ export const cyan = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.cyan.a3}", _dark: "{colors.cyan.a3}" } },
+			hover: {
+				value: { _light: "{colors.cyan.a3}", _dark: "{colors.cyan.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.cyan.a4}", _dark: "{colors.cyan.a4}" },
 			},

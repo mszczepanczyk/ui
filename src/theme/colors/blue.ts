@@ -27,8 +27,12 @@ export const blue = defineSemanticTokens.colors({
 	a12: { value: { _light: "#002359ee", _dark: "#c2e6ff" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.blue.9}", _dark: "{colors.blue.9}" } },
-			hover: { value: { _light: "{colors.blue.10}", _dark: "{colors.blue.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.blue.9}", _dark: "{colors.blue.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.blue.10}", _dark: "{colors.blue.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const blue = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.blue.a3}", _dark: "{colors.blue.a3}" },
 			},
-			hover: { value: { _light: "{colors.blue.a4}", _dark: "{colors.blue.a4}" } },
+			hover: {
+				value: { _light: "{colors.blue.a4}", _dark: "{colors.blue.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.blue.a5}", _dark: "{colors.blue.a5}" },
 			},
@@ -61,7 +67,9 @@ export const blue = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.blue.a6}", _dark: "{colors.blue.a6}" },
 			},
-			hover: { value: { _light: "{colors.blue.a7}", _dark: "{colors.blue.a7}" } },
+			hover: {
+				value: { _light: "{colors.blue.a7}", _dark: "{colors.blue.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const blue = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.blue.a2}", _dark: "{colors.blue.a2}" } },
+			hover: {
+				value: { _light: "{colors.blue.a2}", _dark: "{colors.blue.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.blue.a3}", _dark: "{colors.blue.a3}" },
 			},
@@ -89,7 +99,9 @@ export const blue = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.blue.a3}", _dark: "{colors.blue.a3}" } },
+			hover: {
+				value: { _light: "{colors.blue.a3}", _dark: "{colors.blue.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.blue.a4}", _dark: "{colors.blue.a4}" },
 			},

@@ -27,17 +27,27 @@ export const amber = defineSemanticTokens.colors({
 	a12: { value: { _light: "#341500dd", _dark: "#ffe7b3" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.amber.9}", _dark: "{colors.amber.9}" } },
-			hover: { value: { _light: "{colors.amber.10}", _dark: "{colors.amber.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.amber.9}", _dark: "{colors.amber.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.amber.10}", _dark: "{colors.amber.10}" },
+			},
 		},
-		fg: { DEFAULT: { value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" } } },
+		fg: {
+			DEFAULT: {
+				value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" },
+			},
+		},
 	},
 	subtle: {
 		bg: {
 			DEFAULT: {
 				value: { _light: "{colors.amber.a3}", _dark: "{colors.amber.a3}" },
 			},
-			hover: { value: { _light: "{colors.amber.a4}", _dark: "{colors.amber.a4}" } },
+			hover: {
+				value: { _light: "{colors.amber.a4}", _dark: "{colors.amber.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.amber.a5}", _dark: "{colors.amber.a5}" },
 			},
@@ -61,7 +71,9 @@ export const amber = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.amber.a6}", _dark: "{colors.amber.a6}" },
 			},
-			hover: { value: { _light: "{colors.amber.a7}", _dark: "{colors.amber.a7}" } },
+			hover: {
+				value: { _light: "{colors.amber.a7}", _dark: "{colors.amber.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +83,9 @@ export const amber = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.amber.a2}", _dark: "{colors.amber.a2}" } },
+			hover: {
+				value: { _light: "{colors.amber.a2}", _dark: "{colors.amber.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.amber.a3}", _dark: "{colors.amber.a3}" },
 			},
@@ -89,7 +103,9 @@ export const amber = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.amber.a3}", _dark: "{colors.amber.a3}" } },
+			hover: {
+				value: { _light: "{colors.amber.a3}", _dark: "{colors.amber.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.amber.a4}", _dark: "{colors.amber.a4}" },
 			},

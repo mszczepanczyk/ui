@@ -59,7 +59,9 @@ export const slate = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.white}", _dark: "{colors.slate.1}" },
 			},
-			hover: { value: { _light: "{colors.slate.2}", _dark: "{colors.slate.2}" } },
+			hover: {
+				value: { _light: "{colors.slate.2}", _dark: "{colors.slate.2}" },
+			},
 			active: {
 				value: { _light: "{colors.slate.3}", _dark: "{colors.slate.3}" },
 			},
@@ -68,7 +70,9 @@ export const slate = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.slate.6}", _dark: "{colors.slate.6}" },
 			},
-			hover: { value: { _light: "{colors.slate.7}", _dark: "{colors.slate.7}" } },
+			hover: {
+				value: { _light: "{colors.slate.7}", _dark: "{colors.slate.7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {

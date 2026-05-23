@@ -27,17 +27,27 @@ export const yellow = defineSemanticTokens.colors({
 	a12: { value: { _light: "#2e2000e0", _dark: "#fef6baf6" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.yellow.9}", _dark: "{colors.yellow.9}" } },
-			hover: { value: { _light: "{colors.yellow.10}", _dark: "{colors.yellow.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.yellow.9}", _dark: "{colors.yellow.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.yellow.10}", _dark: "{colors.yellow.10}" },
+			},
 		},
-		fg: { DEFAULT: { value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" } } },
+		fg: {
+			DEFAULT: {
+				value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" },
+			},
+		},
 	},
 	subtle: {
 		bg: {
 			DEFAULT: {
 				value: { _light: "{colors.yellow.a3}", _dark: "{colors.yellow.a3}" },
 			},
-			hover: { value: { _light: "{colors.yellow.a4}", _dark: "{colors.yellow.a4}" } },
+			hover: {
+				value: { _light: "{colors.yellow.a4}", _dark: "{colors.yellow.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.yellow.a5}", _dark: "{colors.yellow.a5}" },
 			},
@@ -61,7 +71,9 @@ export const yellow = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.yellow.a6}", _dark: "{colors.yellow.a6}" },
 			},
-			hover: { value: { _light: "{colors.yellow.a7}", _dark: "{colors.yellow.a7}" } },
+			hover: {
+				value: { _light: "{colors.yellow.a7}", _dark: "{colors.yellow.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +83,9 @@ export const yellow = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.yellow.a2}", _dark: "{colors.yellow.a2}" } },
+			hover: {
+				value: { _light: "{colors.yellow.a2}", _dark: "{colors.yellow.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.yellow.a3}", _dark: "{colors.yellow.a3}" },
 			},
@@ -89,7 +103,9 @@ export const yellow = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.yellow.a3}", _dark: "{colors.yellow.a3}" } },
+			hover: {
+				value: { _light: "{colors.yellow.a3}", _dark: "{colors.yellow.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.yellow.a4}", _dark: "{colors.yellow.a4}" },
 			},

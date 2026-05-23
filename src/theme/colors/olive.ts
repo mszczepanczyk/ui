@@ -59,7 +59,9 @@ export const olive = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.white}", _dark: "{colors.olive.1}" },
 			},
-			hover: { value: { _light: "{colors.olive.2}", _dark: "{colors.olive.2}" } },
+			hover: {
+				value: { _light: "{colors.olive.2}", _dark: "{colors.olive.2}" },
+			},
 			active: {
 				value: { _light: "{colors.olive.3}", _dark: "{colors.olive.3}" },
 			},
@@ -68,7 +70,9 @@ export const olive = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.olive.6}", _dark: "{colors.olive.6}" },
 			},
-			hover: { value: { _light: "{colors.olive.7}", _dark: "{colors.olive.7}" } },
+			hover: {
+				value: { _light: "{colors.olive.7}", _dark: "{colors.olive.7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {

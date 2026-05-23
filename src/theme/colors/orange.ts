@@ -27,8 +27,12 @@ export const orange = defineSemanticTokens.colors({
 	a12: { value: { _light: "#431200e2", _dark: "#ffe0c2" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.orange.9}", _dark: "{colors.orange.9}" } },
-			hover: { value: { _light: "{colors.orange.10}", _dark: "{colors.orange.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.orange.9}", _dark: "{colors.orange.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.orange.10}", _dark: "{colors.orange.10}" },
+			},
 		},
 		fg: { DEFAULT: { value: { _light: "white", _dark: "white" } } },
 	},
@@ -37,7 +41,9 @@ export const orange = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.orange.a3}", _dark: "{colors.orange.a3}" },
 			},
-			hover: { value: { _light: "{colors.orange.a4}", _dark: "{colors.orange.a4}" } },
+			hover: {
+				value: { _light: "{colors.orange.a4}", _dark: "{colors.orange.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.orange.a5}", _dark: "{colors.orange.a5}" },
 			},
@@ -61,7 +67,9 @@ export const orange = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.orange.a6}", _dark: "{colors.orange.a6}" },
 			},
-			hover: { value: { _light: "{colors.orange.a7}", _dark: "{colors.orange.a7}" } },
+			hover: {
+				value: { _light: "{colors.orange.a7}", _dark: "{colors.orange.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +79,9 @@ export const orange = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.orange.a2}", _dark: "{colors.orange.a2}" } },
+			hover: {
+				value: { _light: "{colors.orange.a2}", _dark: "{colors.orange.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.orange.a3}", _dark: "{colors.orange.a3}" },
 			},
@@ -89,7 +99,9 @@ export const orange = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.orange.a3}", _dark: "{colors.orange.a3}" } },
+			hover: {
+				value: { _light: "{colors.orange.a3}", _dark: "{colors.orange.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.orange.a4}", _dark: "{colors.orange.a4}" },
 			},

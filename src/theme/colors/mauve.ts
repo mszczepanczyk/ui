@@ -59,7 +59,9 @@ export const mauve = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.white}", _dark: "{colors.mauve.1}" },
 			},
-			hover: { value: { _light: "{colors.mauve.2}", _dark: "{colors.mauve.2}" } },
+			hover: {
+				value: { _light: "{colors.mauve.2}", _dark: "{colors.mauve.2}" },
+			},
 			active: {
 				value: { _light: "{colors.mauve.3}", _dark: "{colors.mauve.3}" },
 			},
@@ -68,7 +70,9 @@ export const mauve = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.mauve.6}", _dark: "{colors.mauve.6}" },
 			},
-			hover: { value: { _light: "{colors.mauve.7}", _dark: "{colors.mauve.7}" } },
+			hover: {
+				value: { _light: "{colors.mauve.7}", _dark: "{colors.mauve.7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {

@@ -27,17 +27,27 @@ export const mint = defineSemanticTokens.colors({
 	a12: { value: { _light: "#00312ae9", _dark: "#cbfee9f5" } },
 	solid: {
 		bg: {
-			DEFAULT: { value: { _light: "{colors.mint.9}", _dark: "{colors.mint.9}" } },
-			hover: { value: { _light: "{colors.mint.10}", _dark: "{colors.mint.10}" } },
+			DEFAULT: {
+				value: { _light: "{colors.mint.9}", _dark: "{colors.mint.9}" },
+			},
+			hover: {
+				value: { _light: "{colors.mint.10}", _dark: "{colors.mint.10}" },
+			},
 		},
-		fg: { DEFAULT: { value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" } } },
+		fg: {
+			DEFAULT: {
+				value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" },
+			},
+		},
 	},
 	subtle: {
 		bg: {
 			DEFAULT: {
 				value: { _light: "{colors.mint.a3}", _dark: "{colors.mint.a3}" },
 			},
-			hover: { value: { _light: "{colors.mint.a4}", _dark: "{colors.mint.a4}" } },
+			hover: {
+				value: { _light: "{colors.mint.a4}", _dark: "{colors.mint.a4}" },
+			},
 			active: {
 				value: { _light: "{colors.mint.a5}", _dark: "{colors.mint.a5}" },
 			},
@@ -61,7 +71,9 @@ export const mint = defineSemanticTokens.colors({
 			DEFAULT: {
 				value: { _light: "{colors.mint.a6}", _dark: "{colors.mint.a6}" },
 			},
-			hover: { value: { _light: "{colors.mint.a7}", _dark: "{colors.mint.a7}" } },
+			hover: {
+				value: { _light: "{colors.mint.a7}", _dark: "{colors.mint.a7}" },
+			},
 		},
 		fg: {
 			DEFAULT: {
@@ -71,7 +83,9 @@ export const mint = defineSemanticTokens.colors({
 	},
 	outline: {
 		bg: {
-			hover: { value: { _light: "{colors.mint.a2}", _dark: "{colors.mint.a2}" } },
+			hover: {
+				value: { _light: "{colors.mint.a2}", _dark: "{colors.mint.a2}" },
+			},
 			active: {
 				value: { _light: "{colors.mint.a3}", _dark: "{colors.mint.a3}" },
 			},
@@ -89,7 +103,9 @@ export const mint = defineSemanticTokens.colors({
 	},
 	plain: {
 		bg: {
-			hover: { value: { _light: "{colors.mint.a3}", _dark: "{colors.mint.a3}" } },
+			hover: {
+				value: { _light: "{colors.mint.a3}", _dark: "{colors.mint.a3}" },
+			},
 			active: {
 				value: { _light: "{colors.mint.a4}", _dark: "{colors.mint.a4}" },
 			},

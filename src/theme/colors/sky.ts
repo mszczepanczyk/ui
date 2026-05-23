@@ -30,7 +30,11 @@ export const sky = defineSemanticTokens.colors({
 			DEFAULT: { value: { _light: "{colors.sky.9}", _dark: "{colors.sky.9}" } },
 			hover: { value: { _light: "{colors.sky.10}", _dark: "{colors.sky.10}" } },
 		},
-		fg: { DEFAULT: { value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" } } },
+		fg: {
+			DEFAULT: {
+				value: { _light: "{colors.gray.12}", _dark: "{colors.gray.12}" },
+			},
+		},
 	},
 	subtle: {
 		bg: {
