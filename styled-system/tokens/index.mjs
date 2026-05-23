@@ -1872,15 +1872,15 @@ const tokens = {
     "variable": "var(--breakpoints-2xl)"
   },
   "radii.l1": {
-    "value": "var(--radii-xs)",
+    "value": "1px",
     "variable": "var(--radii-l1)"
   },
   "radii.l2": {
-    "value": "var(--radii-sm)",
+    "value": "1px",
     "variable": "var(--radii-l2)"
   },
   "radii.l3": {
-    "value": "var(--radii-md)",
+    "value": "2px",
     "variable": "var(--radii-l3)"
   },
   "spacing.-1": {

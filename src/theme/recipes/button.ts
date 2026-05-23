@@ -16,6 +16,8 @@ export const button = defineRecipe({
 		justifyContent: "center",
 		outline: "0",
 		position: "relative",
+		textTransform: "uppercase",
+		letterSpacing: "0.02em",
 		transition: "colors",
 		transitionProperty: "background-color, border-color, color, box-shadow",
 		userSelect: "none",

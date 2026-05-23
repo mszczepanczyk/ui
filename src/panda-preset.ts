@@ -454,15 +454,15 @@ export const pandaPreset = definePreset({
 
 				radii: {
 					l1: {
-						value: "{radii.xs}",
+						value: "1px",
 					},
 
 					l2: {
-						value: "{radii.sm}",
+						value: "1px",
 					},
 
 					l3: {
-						value: "{radii.md}",
+						value: "2px",
 					},
 				},
 			},
