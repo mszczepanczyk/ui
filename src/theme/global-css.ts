@@ -13,5 +13,11 @@ export const globalCss = {
 			background: "bg.canvas",
 			color: "fg.default",
 		},
+		h1: { textStyle: "5xl", fontWeight: "semibold" },
+		h2: { textStyle: "4xl", fontWeight: "semibold" },
+		h3: { textStyle: "3xl", fontWeight: "semibold" },
+		h4: { textStyle: "2xl", fontWeight: "semibold" },
+		h5: { textStyle: "xl", fontWeight: "semibold" },
+		h6: { textStyle: "lg", fontWeight: "semibold" },
 	},
 };

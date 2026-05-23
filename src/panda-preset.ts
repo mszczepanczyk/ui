@@ -42,6 +42,8 @@ import { durations } from "./theme/tokens/durations";
 import { shadows } from "./theme/tokens/shadows";
 import { zIndex } from "./theme/tokens/z-index";
 
+// https://github.com/primefaces/primereact/blob/master/public/themes/nano/theme.css
+
 export const pandaPreset = definePreset({
 	name: "@mariusz.sh/ui",
 
