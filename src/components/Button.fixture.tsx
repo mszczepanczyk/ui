@@ -16,4 +16,10 @@ export default {
 	),
 	loading: <Button loading>Loading...</Button>,
 	disabled: <Button disabled>Disabled</Button>,
+	primary: <Button variant="primary">Primary</Button>,
+	secondary: <Button variant="secondary">Secondary</Button>,
+	success: <Button variant="success">Success</Button>,
+	danger: <Button variant="danger">Danger</Button>,
+	warning: <Button variant="warning">Warning</Button>,
+	info: <Button variant="info">Info</Button>,
 };

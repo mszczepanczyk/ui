@@ -12,7 +12,13 @@ const buttonVariantMap = {
     "surface",
     "subtle",
     "outline",
-    "plain"
+    "plain",
+    "primary",
+    "secondary",
+    "success",
+    "danger",
+    "warning",
+    "info"
   ],
   "size": [
     "2xs",

@@ -98,6 +98,42 @@ export const button = defineRecipe({
 					bg: "colorPalette.plain.bg.active",
 				},
 			},
+			primary: {
+				colorPalette: "primary",
+				bg: "colorPalette.solid.bg",
+				color: "colorPalette.solid.fg",
+				_hover: { bg: "colorPalette.solid.bg.hover" },
+			},
+			secondary: {
+				colorPalette: "secondary",
+				bg: "colorPalette.solid.bg",
+				color: "colorPalette.solid.fg",
+				_hover: { bg: "colorPalette.solid.bg.hover" },
+			},
+			success: {
+				colorPalette: "success",
+				bg: "colorPalette.solid.bg",
+				color: "colorPalette.solid.fg",
+				_hover: { bg: "colorPalette.solid.bg.hover" },
+			},
+			danger: {
+				colorPalette: "error",
+				bg: "colorPalette.solid.bg",
+				color: "colorPalette.solid.fg",
+				_hover: { bg: "colorPalette.solid.bg.hover" },
+			},
+			warning: {
+				colorPalette: "warning",
+				bg: "colorPalette.solid.bg",
+				color: "colorPalette.solid.fg",
+				_hover: { bg: "colorPalette.solid.bg.hover" },
+			},
+			info: {
+				colorPalette: "info",
+				bg: "colorPalette.solid.bg",
+				color: "colorPalette.solid.fg",
+				_hover: { bg: "colorPalette.solid.bg.hover" },
+			},
 		},
 		size: {
 			"2xs": {

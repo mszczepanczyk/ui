@@ -240,148 +240,963 @@ export const pandaPreset = definePreset({
 					// Status colors
 					success: {
 						default: {
-							value: {
-								_light: "{colors.green.9}",
-								_dark: "{colors.green.9}",
-							},
+							value: { _light: "{colors.green.9}", _dark: "{colors.green.9}" },
 						},
-
 						emphasized: {
 							value: {
 								_light: "{colors.green.10}",
 								_dark: "{colors.green.10}",
 							},
 						},
-
 						fg: {
-							value: {
-								_light: "{colors.white}",
-								_dark: "{colors.white}",
-							},
+							value: { _light: "{colors.white}", _dark: "{colors.white}" },
 						},
-
 						muted: {
 							value: {
 								_light: "{colors.green.a3}",
 								_dark: "{colors.green.a3}",
 							},
 						},
-
 						text: {
 							value: {
 								_light: "{colors.green.11}",
 								_dark: "{colors.green.11}",
 							},
 						},
+						solid: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.9}",
+										_dark: "{colors.green.9}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.green.10}",
+										_dark: "{colors.green.10}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: { _light: "{colors.white}", _dark: "{colors.white}" },
+								},
+							},
+						},
+						subtle: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a3}",
+										_dark: "{colors.green.a3}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.green.a4}",
+										_dark: "{colors.green.a4}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.green.a5}",
+										_dark: "{colors.green.a5}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a11}",
+										_dark: "{colors.green.a11}",
+									},
+								},
+							},
+						},
+						surface: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a2}",
+										_dark: "{colors.green.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.green.a3}",
+										_dark: "{colors.green.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a6}",
+										_dark: "{colors.green.a6}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.green.a7}",
+										_dark: "{colors.green.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a11}",
+										_dark: "{colors.green.a11}",
+									},
+								},
+							},
+						},
+						outline: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.green.a2}",
+										_dark: "{colors.green.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.green.a3}",
+										_dark: "{colors.green.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a7}",
+										_dark: "{colors.green.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a11}",
+										_dark: "{colors.green.a11}",
+									},
+								},
+							},
+						},
+						plain: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.green.a3}",
+										_dark: "{colors.green.a3}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.green.a4}",
+										_dark: "{colors.green.a4}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.green.a11}",
+										_dark: "{colors.green.a11}",
+									},
+								},
+							},
+						},
 					},
 
 					warning: {
 						default: {
-							value: {
-								_light: "{colors.amber.9}",
-								_dark: "{colors.amber.9}",
-							},
+							value: { _light: "{colors.amber.9}", _dark: "{colors.amber.9}" },
 						},
-
 						emphasized: {
 							value: {
 								_light: "{colors.amber.10}",
 								_dark: "{colors.amber.10}",
 							},
 						},
-
 						fg: {
-							value: {
-								_light: "{colors.black}",
-								_dark: "{colors.black}",
-							},
+							value: { _light: "{colors.black}", _dark: "{colors.black}" },
 						},
-
 						muted: {
 							value: {
 								_light: "{colors.amber.a3}",
 								_dark: "{colors.amber.a3}",
 							},
 						},
-
 						text: {
 							value: {
 								_light: "{colors.amber.11}",
 								_dark: "{colors.amber.11}",
 							},
 						},
+						solid: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.9}",
+										_dark: "{colors.amber.9}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.amber.10}",
+										_dark: "{colors.amber.10}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: { _light: "{colors.black}", _dark: "{colors.black}" },
+								},
+							},
+						},
+						subtle: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a3}",
+										_dark: "{colors.amber.a3}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.amber.a4}",
+										_dark: "{colors.amber.a4}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.amber.a5}",
+										_dark: "{colors.amber.a5}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a11}",
+										_dark: "{colors.amber.a11}",
+									},
+								},
+							},
+						},
+						surface: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a2}",
+										_dark: "{colors.amber.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.amber.a3}",
+										_dark: "{colors.amber.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a6}",
+										_dark: "{colors.amber.a6}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.amber.a7}",
+										_dark: "{colors.amber.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a11}",
+										_dark: "{colors.amber.a11}",
+									},
+								},
+							},
+						},
+						outline: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.amber.a2}",
+										_dark: "{colors.amber.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.amber.a3}",
+										_dark: "{colors.amber.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a7}",
+										_dark: "{colors.amber.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a11}",
+										_dark: "{colors.amber.a11}",
+									},
+								},
+							},
+						},
+						plain: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.amber.a3}",
+										_dark: "{colors.amber.a3}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.amber.a4}",
+										_dark: "{colors.amber.a4}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.amber.a11}",
+										_dark: "{colors.amber.a11}",
+									},
+								},
+							},
+						},
 					},
 
 					error: {
 						default: {
-							value: {
-								_light: "{colors.red.9}",
-								_dark: "{colors.red.9}",
-							},
+							value: { _light: "{colors.red.9}", _dark: "{colors.red.9}" },
 						},
-
 						emphasized: {
-							value: {
-								_light: "{colors.red.10}",
-								_dark: "{colors.red.10}",
-							},
+							value: { _light: "{colors.red.10}", _dark: "{colors.red.10}" },
 						},
-
 						fg: {
-							value: {
-								_light: "{colors.white}",
-								_dark: "{colors.white}",
-							},
+							value: { _light: "{colors.white}", _dark: "{colors.white}" },
 						},
-
 						muted: {
-							value: {
-								_light: "{colors.red.a3}",
-								_dark: "{colors.red.a3}",
+							value: { _light: "{colors.red.a3}", _dark: "{colors.red.a3}" },
+						},
+						text: {
+							value: { _light: "{colors.red.11}", _dark: "{colors.red.11}" },
+						},
+						solid: {
+							bg: {
+								DEFAULT: {
+									value: { _light: "{colors.red.9}", _dark: "{colors.red.9}" },
+								},
+								hover: {
+									value: {
+										_light: "{colors.red.10}",
+										_dark: "{colors.red.10}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: { _light: "{colors.white}", _dark: "{colors.white}" },
+								},
 							},
 						},
-
-						text: {
-							value: {
-								_light: "{colors.red.11}",
-								_dark: "{colors.red.11}",
+						subtle: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a3}",
+										_dark: "{colors.red.a3}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.red.a4}",
+										_dark: "{colors.red.a4}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.red.a5}",
+										_dark: "{colors.red.a5}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a11}",
+										_dark: "{colors.red.a11}",
+									},
+								},
+							},
+						},
+						surface: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a2}",
+										_dark: "{colors.red.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.red.a3}",
+										_dark: "{colors.red.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a6}",
+										_dark: "{colors.red.a6}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.red.a7}",
+										_dark: "{colors.red.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a11}",
+										_dark: "{colors.red.a11}",
+									},
+								},
+							},
+						},
+						outline: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.red.a2}",
+										_dark: "{colors.red.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.red.a3}",
+										_dark: "{colors.red.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a7}",
+										_dark: "{colors.red.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a11}",
+										_dark: "{colors.red.a11}",
+									},
+								},
+							},
+						},
+						plain: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.red.a3}",
+										_dark: "{colors.red.a3}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.red.a4}",
+										_dark: "{colors.red.a4}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.red.a11}",
+										_dark: "{colors.red.a11}",
+									},
+								},
 							},
 						},
 					},
 
 					info: {
 						default: {
-							value: {
-								_light: "{colors.blue.9}",
-								_dark: "{colors.blue.9}",
-							},
+							value: { _light: "{colors.blue.9}", _dark: "{colors.blue.9}" },
 						},
-
 						emphasized: {
-							value: {
-								_light: "{colors.blue.10}",
-								_dark: "{colors.blue.10}",
-							},
+							value: { _light: "{colors.blue.10}", _dark: "{colors.blue.10}" },
 						},
-
 						fg: {
-							value: {
-								_light: "{colors.white}",
-								_dark: "{colors.white}",
-							},
+							value: { _light: "{colors.white}", _dark: "{colors.white}" },
 						},
-
 						muted: {
-							value: {
-								_light: "{colors.blue.a3}",
-								_dark: "{colors.blue.a3}",
+							value: { _light: "{colors.blue.a3}", _dark: "{colors.blue.a3}" },
+						},
+						text: {
+							value: { _light: "{colors.blue.11}", _dark: "{colors.blue.11}" },
+						},
+						solid: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.9}",
+										_dark: "{colors.blue.9}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.blue.10}",
+										_dark: "{colors.blue.10}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: { _light: "{colors.white}", _dark: "{colors.white}" },
+								},
 							},
 						},
+						subtle: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.blue.a4}",
+										_dark: "{colors.blue.a4}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a5}",
+										_dark: "{colors.blue.a5}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+						surface: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a2}",
+										_dark: "{colors.blue.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a6}",
+										_dark: "{colors.blue.a6}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.blue.a7}",
+										_dark: "{colors.blue.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+						outline: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.blue.a2}",
+										_dark: "{colors.blue.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a7}",
+										_dark: "{colors.blue.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+						plain: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a4}",
+										_dark: "{colors.blue.a4}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+					},
 
-						text: {
-							value: {
-								_light: "{colors.blue.11}",
-								_dark: "{colors.blue.11}",
+					primary: {
+						solid: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.9}",
+										_dark: "{colors.blue.9}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.blue.10}",
+										_dark: "{colors.blue.10}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: { _light: "{colors.white}", _dark: "{colors.white}" },
+								},
+							},
+						},
+						subtle: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.blue.a4}",
+										_dark: "{colors.blue.a4}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a5}",
+										_dark: "{colors.blue.a5}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+						surface: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a2}",
+										_dark: "{colors.blue.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a6}",
+										_dark: "{colors.blue.a6}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.blue.a7}",
+										_dark: "{colors.blue.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+						outline: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.blue.a2}",
+										_dark: "{colors.blue.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a7}",
+										_dark: "{colors.blue.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+						plain: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.blue.a3}",
+										_dark: "{colors.blue.a3}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.blue.a4}",
+										_dark: "{colors.blue.a4}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.blue.a11}",
+										_dark: "{colors.blue.a11}",
+									},
+								},
+							},
+						},
+					},
+
+					secondary: {
+						solid: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.9}",
+										_dark: "{colors.slate.9}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.slate.10}",
+										_dark: "{colors.slate.10}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: { _light: "{colors.white}", _dark: "{colors.white}" },
+								},
+							},
+						},
+						subtle: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a3}",
+										_dark: "{colors.slate.a3}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.slate.a4}",
+										_dark: "{colors.slate.a4}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.slate.a5}",
+										_dark: "{colors.slate.a5}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a11}",
+										_dark: "{colors.slate.a11}",
+									},
+								},
+							},
+						},
+						surface: {
+							bg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a2}",
+										_dark: "{colors.slate.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.slate.a3}",
+										_dark: "{colors.slate.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a6}",
+										_dark: "{colors.slate.a6}",
+									},
+								},
+								hover: {
+									value: {
+										_light: "{colors.slate.a7}",
+										_dark: "{colors.slate.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a11}",
+										_dark: "{colors.slate.a11}",
+									},
+								},
+							},
+						},
+						outline: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.slate.a2}",
+										_dark: "{colors.slate.a2}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.slate.a3}",
+										_dark: "{colors.slate.a3}",
+									},
+								},
+							},
+							border: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a7}",
+										_dark: "{colors.slate.a7}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a11}",
+										_dark: "{colors.slate.a11}",
+									},
+								},
+							},
+						},
+						plain: {
+							bg: {
+								hover: {
+									value: {
+										_light: "{colors.slate.a3}",
+										_dark: "{colors.slate.a3}",
+									},
+								},
+								active: {
+									value: {
+										_light: "{colors.slate.a4}",
+										_dark: "{colors.slate.a4}",
+									},
+								},
+							},
+							fg: {
+								DEFAULT: {
+									value: {
+										_light: "{colors.slate.a11}",
+										_dark: "{colors.slate.a11}",
+									},
+								},
 							},
 						},
 					},

@@ -21,7 +21,7 @@ const Blockquote = styled("blockquote");
 const Code = styled("code");
 const Pre = styled("pre");
 
-const components = {
+const _components = {
 	h1: (props: ComponentProps<typeof H1>) => (
 		<H1 fontSize="3xl" fontWeight="bold" mb="4" mt="6" {...props} />
 	),
@@ -88,5 +88,5 @@ const components = {
 };
 
 export default function Decorator({ children }: { children: ReactNode }) {
-	return <MDXProvider components={components}>{children}</MDXProvider>;
+	return <MDXProvider>{children}</MDXProvider>;
 }
