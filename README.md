@@ -29,3 +29,7 @@ npm run dev
 - `npm run lint` - Biome linter
 - `npm run format` - Biome formatter
 - `npm run typecheck` - TypeScript check
+
+## TODO
+
+- [ ] Which deps should go to peerDependencies?
