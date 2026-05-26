@@ -14,19 +14,19 @@ import { table } from "./table";
 import { text } from "./text";
 
 export const recipes = {
-	button,
-	group,
 	absoluteCenter,
-	spinner,
-	input,
-	link,
-	heading,
+	button,
 	card,
-	navbar,
-	layout,
 	code,
-	text,
+	group,
+	heading,
+	input,
 	kbd,
+	layout,
+	link,
+	navbar,
+	spinner,
+	text,
 };
 export const slotRecipes = {
 	table,
