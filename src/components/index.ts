@@ -64,8 +64,6 @@ export {
 } from "./Span";
 export { Spinner, type SpinnerProps } from "./Spinner";
 export {
-	SortableTableHead,
-	type SortableTableHeadProps,
 	Table,
 	TableBody,
 	type TableBodyProps,

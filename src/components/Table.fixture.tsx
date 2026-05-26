@@ -1,4 +1,4 @@
-import { SortableTableHead, Table } from "./Table";
+import { Table } from "./Table";
 
 export default {
 	simple: (
@@ -65,15 +65,15 @@ export default {
 		<Table.Root style={{ maxWidth: 600 }}>
 			<Table.Header>
 				<Table.Row>
-					<SortableTableHead selected order="asc">
+					<Table.Head sortable sortOrder="asc">
 						Name
-					</SortableTableHead>
-					<SortableTableHead selected={false} order="asc">
+					</Table.Head>
+					<Table.Head sortable>
 						Email
-					</SortableTableHead>
-					<SortableTableHead selected={false} order="asc">
+					</Table.Head>
+					<Table.Head sortable>
 						Role
-					</SortableTableHead>
+					</Table.Head>
 				</Table.Row>
 			</Table.Header>
 			<Table.Body>
@@ -94,15 +94,15 @@ export default {
 		<Table.Root style={{ maxWidth: 600 }}>
 			<Table.Header>
 				<Table.Row>
-					<SortableTableHead selected={false} order="asc">
+					<Table.Head sortable>
 						Name
-					</SortableTableHead>
-					<SortableTableHead selected order="desc">
+					</Table.Head>
+					<Table.Head sortable sortOrder="desc">
 						Email
-					</SortableTableHead>
-					<SortableTableHead selected={false} order="asc">
+					</Table.Head>
+					<Table.Head sortable>
 						Role
-					</SortableTableHead>
+					</Table.Head>
 				</Table.Row>
 			</Table.Header>
 		</Table.Root>
