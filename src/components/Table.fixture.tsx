@@ -65,7 +65,7 @@ export default {
 		<Table.Root style={{ maxWidth: 600 }}>
 			<Table.Header>
 				<Table.Row>
-					<Table.Head sortable sortOrder="asc">
+					<Table.Head sortable order="asc">
 						Name
 					</Table.Head>
 					<Table.Head sortable>
@@ -97,7 +97,7 @@ export default {
 					<Table.Head sortable>
 						Name
 					</Table.Head>
-					<Table.Head sortable sortOrder="desc">
+					<Table.Head sortable order="desc">
 						Email
 					</Table.Head>
 					<Table.Head sortable>

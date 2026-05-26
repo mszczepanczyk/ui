@@ -23,14 +23,11 @@ const TableHeadBase = withContext(ark.th, "head");
 
 export type TableHeadProps = TableHeadBaseProps & {
 	sortable?: boolean;
-	sortOrder?: "asc" | "desc";
+	order?: "asc" | "desc";
 };
 
 export const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
-	function TableHead(
-		{ sortable, sortOrder, className, children, ...props },
-		ref,
-	) {
+	function TableHead({ sortable, order, className, children, ...props }, ref) {
 		if (!sortable) {
 			return (
 				<TableHeadBase ref={ref} className={className} {...props}>
@@ -53,7 +50,7 @@ export const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
 			>
 				{children}
 				<span className={css({ marginLeft: "1", opacity: 0.6 })}>
-					{sortOrder ? (sortOrder === "asc" ? "▲" : "▼") : "⇅"}
+					{order === "asc" ? "▲" : order === "desc" ? "▼" : "⇅"}
 				</span>
 			</TableHeadBase>
 		);
