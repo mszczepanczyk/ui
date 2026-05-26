@@ -1,7 +1,8 @@
 "use client";
 
 import { ark } from "@ark-ui/react/factory";
-import type { ComponentProps } from "react";
+import { type ComponentProps, forwardRef } from "react";
+import { css, cx } from "styled-system/css";
 import { createStyleContext } from "styled-system/jsx";
 import { table } from "styled-system/recipes";
 
@@ -24,6 +25,39 @@ export const TableHead = withContext(ark.th, "head");
 
 export type TableCellProps = ComponentProps<typeof TableCell>;
 export const TableCell = withContext(ark.td, "cell");
+
+export type SortableTableHeadProps = ComponentProps<typeof TableHead> & {
+	selected?: boolean;
+	order?: "asc" | "desc";
+};
+
+export const SortableTableHead = forwardRef<
+	HTMLTableCellElement,
+	SortableTableHeadProps
+>(function SortableTableHead(
+	{ selected, order, className, children, ...props },
+	ref,
+) {
+	return (
+		<TableHead
+			ref={ref}
+			className={cx(
+				css({
+					cursor: "pointer",
+					_hover: { color: "fg" },
+				}),
+				className,
+			)}
+			tabIndex={0}
+			{...props}
+		>
+			{children}
+			<span className={css({ marginLeft: "1", opacity: 0.6 })}>
+				{selected ? (order === "asc" ? "▲" : "▼") : "⇅"}
+			</span>
+		</TableHead>
+	);
+});
 
 export const Table = {
 	Root: TableRoot,

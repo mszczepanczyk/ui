@@ -1,4 +1,4 @@
-import { Table } from "./Table";
+import { SortableTableHead, Table } from "./Table";
 
 export default {
 	simple: (
@@ -59,6 +59,52 @@ export default {
 					<Table.Cell>$4.99</Table.Cell>
 				</Table.Row>
 			</Table.Body>
+		</Table.Root>
+	),
+	"selected-asc": (
+		<Table.Root style={{ maxWidth: 600 }}>
+			<Table.Header>
+				<Table.Row>
+					<SortableTableHead selected order="asc">
+						Name
+					</SortableTableHead>
+					<SortableTableHead selected={false} order="asc">
+						Email
+					</SortableTableHead>
+					<SortableTableHead selected={false} order="asc">
+						Role
+					</SortableTableHead>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
+				<Table.Row>
+					<Table.Cell>Alice Johnson</Table.Cell>
+					<Table.Cell>alice@example.com</Table.Cell>
+					<Table.Cell>Developer</Table.Cell>
+				</Table.Row>
+				<Table.Row>
+					<Table.Cell>Bob Smith</Table.Cell>
+					<Table.Cell>bob@example.com</Table.Cell>
+					<Table.Cell>Designer</Table.Cell>
+				</Table.Row>
+			</Table.Body>
+		</Table.Root>
+	),
+	"selected-desc": (
+		<Table.Root style={{ maxWidth: 600 }}>
+			<Table.Header>
+				<Table.Row>
+					<SortableTableHead selected={false} order="asc">
+						Name
+					</SortableTableHead>
+					<SortableTableHead selected order="desc">
+						Email
+					</SortableTableHead>
+					<SortableTableHead selected={false} order="asc">
+						Role
+					</SortableTableHead>
+				</Table.Row>
+			</Table.Header>
 		</Table.Root>
 	),
 };

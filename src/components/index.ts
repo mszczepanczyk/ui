@@ -62,20 +62,22 @@ export {
 	Span,
 	type SpanProps,
 } from "./Span";
+export { Spinner, type SpinnerProps } from "./Spinner";
 export {
+	SortableTableHead,
+	type SortableTableHeadProps,
 	Table,
 	TableBody,
 	type TableBodyProps,
 	TableCell,
 	type TableCellProps,
 	TableHead,
-	type TableHeadProps,
 	TableHeader,
 	type TableHeaderProps,
+	type TableHeadProps,
 	TableRoot,
 	type TableRootProps,
 	TableRow,
 	type TableRowProps,
 } from "./Table";
-export { Spinner, type SpinnerProps } from "./Spinner";
 export { Text, type TextProps } from "./Text";
