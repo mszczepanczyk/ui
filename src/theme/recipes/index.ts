@@ -10,6 +10,7 @@ import { layout } from "./layout";
 import { link } from "./link";
 import { navbar } from "./navbar";
 import { spinner } from "./spinner";
+import { table } from "./table";
 import { text } from "./text";
 
 export const recipes = {
@@ -27,4 +28,6 @@ export const recipes = {
 	text,
 	kbd,
 };
-export const slotRecipes = {};
+export const slotRecipes = {
+	table,
+};

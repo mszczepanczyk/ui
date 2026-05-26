@@ -58,6 +58,24 @@ export {
 	NavbarRoot,
 	type NavbarRootProps,
 } from "./Navbar";
-export { Span, type SpanProps } from "./Span";
+export {
+	Span,
+	type SpanProps,
+} from "./Span";
+export {
+	Table,
+	TableBody,
+	type TableBodyProps,
+	TableCell,
+	type TableCellProps,
+	TableHead,
+	type TableHeadProps,
+	TableHeader,
+	type TableHeaderProps,
+	TableRoot,
+	type TableRootProps,
+	TableRow,
+	type TableRowProps,
+} from "./Table";
 export { Spinner, type SpinnerProps } from "./Spinner";
 export { Text, type TextProps } from "./Text";

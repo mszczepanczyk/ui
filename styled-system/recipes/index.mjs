@@ -11,3 +11,4 @@ export * from './layout.mjs';
 export * from './code.mjs';
 export * from './text.mjs';
 export * from './kbd.mjs';
+export * from './table.mjs';
