@@ -36,7 +36,7 @@
 	"scripts": {
 		"build": "npm run build:lib && npm run build:css",
 		"build:css": "panda cssgen './src/**/*.{ts,tsx}' --cwd . -o dist/styles.css",
-		"build:lib": "panda codegen && tsc -b && vite build",
+		"build:lib": "panda codegen && tsc -b && vite build && panda ship --outfile dist/panda.buildinfo.json",
 		"cosmos": "cosmos",
 		"cosmos:export": "cosmos-export",
 		"dev": "cosmos",
