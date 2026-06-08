@@ -68,12 +68,8 @@ export default {
 					<Table.Head sortable order="asc">
 						Name
 					</Table.Head>
-					<Table.Head sortable>
-						Email
-					</Table.Head>
-					<Table.Head sortable>
-						Role
-					</Table.Head>
+					<Table.Head sortable>Email</Table.Head>
+					<Table.Head sortable>Role</Table.Head>
 				</Table.Row>
 			</Table.Header>
 			<Table.Body>
@@ -94,15 +90,11 @@ export default {
 		<Table.Root style={{ maxWidth: 600 }}>
 			<Table.Header>
 				<Table.Row>
-					<Table.Head sortable>
-						Name
-					</Table.Head>
+					<Table.Head sortable>Name</Table.Head>
 					<Table.Head sortable order="desc">
 						Email
 					</Table.Head>
-					<Table.Head sortable>
-						Role
-					</Table.Head>
+					<Table.Head sortable>Role</Table.Head>
 				</Table.Row>
 			</Table.Header>
 		</Table.Root>
