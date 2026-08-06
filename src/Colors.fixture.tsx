@@ -1,9 +1,30 @@
 import { css } from "styled-system/css";
 import { type Token, token } from "styled-system/tokens";
 import { Table } from "./components/Table";
-import { colorScaleNames, semanticColors } from "./panda-preset";
+import { colorScaleNames, colorScales, semanticColors } from "./panda-preset";
+import { hexToHue, hexToSaturation } from "./util/color";
 
-const colorNames = [...colorScaleNames].sort();
+const NEUTRAL_SATURATION_THRESHOLD = 0.08;
+const MUTED_SATURATION_THRESHOLD = 0.35;
+
+function colorSortKey(name: string) {
+	const hex = colorScales[name as keyof typeof colorScales]["11"].value._light;
+	const saturation = hexToSaturation(hex);
+	const tier =
+		saturation < NEUTRAL_SATURATION_THRESHOLD
+			? 2
+			: saturation < MUTED_SATURATION_THRESHOLD
+				? 1
+				: 0;
+	return { tier, hue: hexToHue(hex) };
+}
+
+const colorNames = [...colorScaleNames].sort((a, b) => {
+	const keyA = colorSortKey(a);
+	const keyB = colorSortKey(b);
+	if (keyA.tier !== keyB.tier) return keyA.tier - keyB.tier;
+	return keyA.tier === 2 ? a.localeCompare(b) : keyA.hue - keyB.hue;
+});
 
 const steps = Array.from({ length: 12 }, (_, index) => index + 1);
 
