@@ -131,7 +131,7 @@ function ColorSwatchRow({ tokens }: { tokens: SemanticColorToken[] }) {
 }
 
 export default {
-	raw: (
+	scales: (
 		<Table.Root style={{ maxWidth: 900 }}>
 			<Table.Header>
 				<Table.Row>
