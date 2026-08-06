@@ -121,7 +121,15 @@ export default {
 };
 ```
 
-Run: `npm run dev`
+Do not run `npm run dev` (or `npm run cosmos`) yourself unless the user explicitly asks you to start it. Assume the user already has it running; if a fixture link doesn't load, tell the user to start it rather than launching it yourself.
+
+To link directly to one story instead of loading the whole fixture tree, pass a `fixtureId` query param:
+
+```
+http://localhost:5101/?fixtureId={"path":"src/components/Button.fixture.tsx","name":"solid"}&locked=true
+```
+
+`path` is the fixture file path relative to the repo root, `name` is the export key for the story.
 
 ## Path Aliases
 
