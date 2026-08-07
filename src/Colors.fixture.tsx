@@ -1,5 +1,6 @@
 import { css } from "styled-system/css";
 import { type Token, token } from "styled-system/tokens";
+import Docs from "./Colors.docs.mdx";
 import { Table } from "./components/Table";
 import { colorScaleNames, colorScales, semanticColors } from "./panda-preset";
 import { hexToHue, hexToSaturation } from "./util/color";
@@ -8,7 +9,7 @@ const NEUTRAL_SATURATION_THRESHOLD = 0.08;
 const MUTED_SATURATION_THRESHOLD = 0.35;
 
 function colorSortKey(name: string) {
-	const hex = colorScales[name as keyof typeof colorScales]["11"].value._light;
+	const hex = colorScales[name as keyof typeof colorScales]["9"].value._light;
 	const saturation = hexToSaturation(hex);
 	const tier =
 		saturation < NEUTRAL_SATURATION_THRESHOLD
@@ -131,6 +132,7 @@ function ColorSwatchRow({ tokens }: { tokens: SemanticColorToken[] }) {
 }
 
 export default {
+	overview: <Docs />,
 	scales: (
 		<Table.Root style={{ maxWidth: 900 }}>
 			<Table.Header>

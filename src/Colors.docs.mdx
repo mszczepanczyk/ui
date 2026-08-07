@@ -1,0 +1,43 @@
+# Colors
+
+## Source
+
+The raw color scales in `src/theme/colors/` come from [Radix Colors](https://www.radix-ui.com/colors). Each scale (`blue`, `red`, `grass`, ...) has 12 numbered steps plus 12 matching alpha (`a1`-`a12`) steps, each with a light and dark mode value. The hex values are copied in by hand rather than installed as a package, so a scale must be re-copied from the Radix Colors export tool if it needs updating.
+
+## What each step is for
+
+Radix designs every scale so a given step number plays the same role across all colors - so `blue.9` and `red.9` are both "solid background", just in different hues.
+
+<table>
+	<thead>
+		<tr>
+			<th>Step</th>
+			<th>Function</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>1</td><td>App background</td></tr>
+		<tr><td>2</td><td>Subtle background</td></tr>
+		<tr><td>3</td><td>UI element background</td></tr>
+		<tr><td>4</td><td>Hovered UI element background</td></tr>
+		<tr><td>5</td><td>Active / selected UI element background</td></tr>
+		<tr><td>6</td><td>Subtle borders and separators</td></tr>
+		<tr><td>7</td><td>UI element border and focus rings</td></tr>
+		<tr><td>8</td><td>Hovered UI element border</td></tr>
+		<tr><td>9</td><td>Solid backgrounds</td></tr>
+		<tr><td>10</td><td>Hovered solid backgrounds</td></tr>
+		<tr><td>11</td><td>Low-contrast text</td></tr>
+		<tr><td>12</td><td>High-contrast text</td></tr>
+	</tbody>
+</table>
+
+Step 9 is the "purest" step in each scale - the one mixed with the least white or black - which is why it's used as the solid/accent color. Steps 11-12 are tuned to keep sufficient contrast when placed over that scale's own step 2 background.
+
+## Alpha steps
+
+Every step also has an alpha (`aN`) version: the same color expressed as a semi-transparent overlay instead of a flat hex. Alpha steps are for layering a color over a background you don't fully control (e.g. a hover state on top of an image or another color), since they blend rather than replace what's underneath.
+
+## See also
+
+- **scales** - every scale's 12 steps as a grid, sorted by hue
+- **semantic** - how these raw scales are composed into semantic tokens (`fg`, `bg`, `border`, `accent`, ...)
