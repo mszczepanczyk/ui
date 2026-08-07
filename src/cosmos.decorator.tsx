@@ -1,5 +1,7 @@
 import { MDXProvider } from "@mdx-js/react";
 import type { ReactNode } from "react";
+import { useValue } from "react-cosmos/client";
+import { css } from "styled-system/css";
 
 import "./index.css";
 
@@ -87,5 +89,16 @@ import "./index.css";
 // };
 
 export default function Decorator({ children }: { children: ReactNode }) {
-	return <MDXProvider>{children}</MDXProvider>;
+	const [isDark] = useValue("Dark mode", { defaultValue: false });
+	const colorMode = isDark ? "dark" : "light";
+
+	return (
+		<MDXProvider>
+			<div
+				className={`${colorMode} ${css({ minH: "100vh", background: "bg.canvas", color: "fg.default" })}`}
+			>
+				{children}
+			</div>
+		</MDXProvider>
+	);
 }
