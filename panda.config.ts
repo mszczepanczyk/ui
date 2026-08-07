@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
-import { pandaPreset } from "./src/panda-preset";
+import { colorScaleNames, pandaPreset } from "./src/panda-preset";
 
 export default defineConfig({
 	// Use the library's own preset
@@ -25,4 +25,17 @@ export default defineConfig({
 
 	// Generate CSS file for generic consumers
 	emitTokensOnly: false,
+
+	// Pre-generate colorPalette utilities for every color scale, since
+	// consumers (and the Cosmos color scheme switcher) set `colorPalette`
+	// dynamically rather than as a literal Panda can statically extract
+	staticCss: {
+		css: [
+			{
+				properties: {
+					colorPalette: colorScaleNames,
+				},
+			},
+		],
+	},
 });

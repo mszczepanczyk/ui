@@ -1,7 +1,9 @@
 import { MDXProvider } from "@mdx-js/react";
 import type { ReactNode } from "react";
-import { useValue } from "react-cosmos/client";
+import { useEffect, useState } from "react";
+import { useSelect, useValue } from "react-cosmos/client";
 import { css } from "styled-system/css";
+import { colorScaleNames } from "./panda-preset";
 
 import "./index.css";
 
@@ -88,14 +90,45 @@ import "./index.css";
 // 	),
 // };
 
+const DARK_MODE_STORAGE_KEY = "cosmos-dark-mode";
+const COLOR_SCHEME_STORAGE_KEY = "cosmos-color-scheme";
+
+function getStoredDarkMode(): boolean {
+	return window.localStorage.getItem(DARK_MODE_STORAGE_KEY) === "true";
+}
+
+function getStoredColorScheme(): string {
+	const stored = window.localStorage.getItem(COLOR_SCHEME_STORAGE_KEY);
+	return colorScaleNames.find((scheme) => scheme === stored) ?? "indigo";
+}
+
 export default function Decorator({ children }: { children: ReactNode }) {
-	const [isDark] = useValue("Dark mode", { defaultValue: false });
+	// Read once on mount: these hooks reset the current selection whenever the
+	// `defaultValue` they were given changes between renders, so re-reading
+	// localStorage on every render created a feedback loop with the effects below.
+	const [initialDarkMode] = useState(getStoredDarkMode);
+	const [initialColorScheme] = useState(getStoredColorScheme);
+
+	const [isDark] = useValue("Dark mode", { defaultValue: initialDarkMode });
+	const [scheme] = useSelect("Color scheme", {
+		options: colorScaleNames,
+		defaultValue: initialColorScheme,
+	});
+
+	useEffect(() => {
+		window.localStorage.setItem(DARK_MODE_STORAGE_KEY, String(isDark));
+	}, [isDark]);
+
+	useEffect(() => {
+		window.localStorage.setItem(COLOR_SCHEME_STORAGE_KEY, scheme);
+	}, [scheme]);
+
 	const colorMode = isDark ? "dark" : "light";
 
 	return (
 		<MDXProvider>
 			<div
-				className={`${colorMode} ${css({ minH: "100vh", background: "bg.canvas", color: "fg.default" })}`}
+				className={`${colorMode} ${css({ colorPalette: scheme, minH: "100vh", background: "bg.canvas", color: "fg.default" })}`}
 			>
 				{children}
 			</div>
