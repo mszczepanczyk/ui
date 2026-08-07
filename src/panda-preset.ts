@@ -209,47 +209,50 @@ export const semanticColors = {
 		},
 	},
 
-	// Accent (primary) color - Nano uses a cyan-blue #1174c0
+	// Accent color - aliases the ambient colorPalette so it tracks whichever
+	// scheme is set on an ancestor (see Colors fixture / Cosmos color scheme switcher).
+	// `colorPalette` is a utility-only construct, not a real token, so it can't be
+	// referenced via the `{colors.x}` alias syntax - use the raw CSS variable instead.
 	accent: {
 		default: {
 			value: {
-				_light: "{colors.blue.9}",
-				_dark: "{colors.blue.9}",
+				_light: "var(--colors-color-palette-9)",
+				_dark: "var(--colors-color-palette-9)",
 			},
 		},
 
 		emphasized: {
 			value: {
-				_light: "{colors.blue.10}",
-				_dark: "{colors.blue.10}",
+				_light: "var(--colors-color-palette-10)",
+				_dark: "var(--colors-color-palette-10)",
 			},
 		},
 
 		fg: {
 			value: {
-				_light: "{colors.white}",
-				_dark: "{colors.white}",
+				_light: "var(--colors-color-palette-solid-fg)",
+				_dark: "var(--colors-color-palette-solid-fg)",
 			},
 		},
 
 		muted: {
 			value: {
-				_light: "{colors.blue.a3}",
-				_dark: "{colors.blue.a3}",
+				_light: "var(--colors-color-palette-a3)",
+				_dark: "var(--colors-color-palette-a3)",
 			},
 		},
 
 		subtle: {
 			value: {
-				_light: "{colors.blue.a4}",
-				_dark: "{colors.blue.a4}",
+				_light: "var(--colors-color-palette-a4)",
+				_dark: "var(--colors-color-palette-a4)",
 			},
 		},
 
 		text: {
 			value: {
-				_light: "{colors.blue.11}",
-				_dark: "{colors.blue.11}",
+				_light: "var(--colors-color-palette-11)",
+				_dark: "var(--colors-color-palette-11)",
 			},
 		},
 	},
