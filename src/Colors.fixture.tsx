@@ -1,12 +1,14 @@
+import { lazy, Suspense } from "react";
 import { css } from "styled-system/css";
 import { type Token, token } from "styled-system/tokens";
-import Docs from "./Colors.docs.mdx";
 import { Table } from "./components/Table";
 import { colorScaleNames, colorScales, semanticColors } from "./panda-preset";
 import { hexToHue, hexToSaturation } from "./util/color";
 
 const NEUTRAL_SATURATION_THRESHOLD = 0.08;
 const MUTED_SATURATION_THRESHOLD = 0.35;
+
+const Docs = lazy(() => import("./Colors.docs.mdx"));
 
 function colorSortKey(name: string) {
 	const hex = colorScales[name as keyof typeof colorScales]["9"].value._light;
@@ -132,7 +134,11 @@ function ColorSwatchRow({ tokens }: { tokens: SemanticColorToken[] }) {
 }
 
 export default {
-	overview: <Docs />,
+	overview: (
+		<Suspense fallback={null}>
+			<Docs />
+		</Suspense>
+	),
 	scales: (
 		<Table.Root style={{ maxWidth: 900 }}>
 			<Table.Header>
