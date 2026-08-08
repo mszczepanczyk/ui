@@ -4,7 +4,7 @@ export const globalCss = {
 			"--global-color-border": "colors.border.default",
 			"--global-color-placeholder": "colors.fg.subtle",
 			"--global-color-selection": "colors.colorPalette.subtle.bg",
-			"--global-color-focus-ring": "colors.focusRing",
+			"--global-color-focus-ring": "colors.focusRing.default",
 		},
 		html: {
 			colorPalette: "slate",

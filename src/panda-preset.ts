@@ -1,6 +1,8 @@
 import { definePreset } from "@pandacss/dev";
 import { animationStyles } from "./theme/animation-styles";
+import { ROLE_DEFAULT_SCALE, rawScale } from "./theme/color-scheme";
 import { amber } from "./theme/colors/amber";
+import { black } from "./theme/colors/black";
 import { blue } from "./theme/colors/blue";
 import { bronze } from "./theme/colors/bronze";
 import { brown } from "./theme/colors/brown";
@@ -30,6 +32,7 @@ import { slate } from "./theme/colors/slate";
 import { teal } from "./theme/colors/teal";
 import { tomato } from "./theme/colors/tomato";
 import { violet } from "./theme/colors/violet";
+import { white } from "./theme/colors/white";
 import { yellow } from "./theme/colors/yellow";
 import { conditions } from "./theme/conditions";
 import { globalCss } from "./theme/global-css";
@@ -37,7 +40,6 @@ import { keyframes } from "./theme/keyframes";
 import { layerStyles } from "./theme/layer-styles";
 import { recipes, slotRecipes } from "./theme/recipes";
 import { textStyles } from "./theme/text-styles";
-import { colors } from "./theme/tokens/colors";
 import { durations } from "./theme/tokens/durations";
 import { shadows } from "./theme/tokens/shadows";
 import { zIndex } from "./theme/tokens/z-index";
@@ -46,6 +48,7 @@ import { zIndex } from "./theme/tokens/z-index";
 
 export const colorScales = {
 	amber,
+	black,
 	blue,
 	bronze,
 	brown,
@@ -75,6 +78,7 @@ export const colorScales = {
 	teal,
 	tomato,
 	violet,
+	white,
 	yellow,
 };
 
@@ -83,128 +87,139 @@ export const colorScaleNames = Object.keys(colorScales);
 export const semanticColors = {
 	// Foreground colors (text)
 	fg: {
+		// Each role's own namespace, aliased from ROLE_DEFAULT_SCALE - a color
+		// scheme repoints these 24 to a different scale; everything below reads from them.
+		...rawScale(ROLE_DEFAULT_SCALE.fg),
+
 		default: {
 			value: {
-				_light: "{colors.slate.12}",
-				_dark: "{colors.slate.12}",
+				_light: "var(--colors-fg-12)",
+				_dark: "var(--colors-fg-12)",
 			},
 		},
 
 		muted: {
 			value: {
-				_light: "{colors.slate.11}",
-				_dark: "{colors.slate.11}",
+				_light: "var(--colors-fg-11)",
+				_dark: "var(--colors-fg-11)",
 			},
 		},
 
 		subtle: {
 			value: {
-				_light: "{colors.slate.10}",
-				_dark: "{colors.slate.10}",
+				_light: "var(--colors-fg-10)",
+				_dark: "var(--colors-fg-10)",
 			},
 		},
 
 		disabled: {
 			value: {
-				_light: "{colors.slate.8}",
-				_dark: "{colors.slate.8}",
+				_light: "var(--colors-fg-8)",
+				_dark: "var(--colors-fg-8)",
 			},
 		},
 
+		// gray.1 already flips light/dark on its own (light in light mode,
+		// dark in dark mode), which is exactly the inversion this wants -
+		// referencing it in both branches, not gray.12 in the dark one.
 		inverted: {
 			value: {
-				_light: "{colors.white}",
-				_dark: "{colors.black}",
+				_light: "{colors.gray.1}",
+				_dark: "{colors.gray.1}",
 			},
 		},
 	},
 
 	// Background colors
 	bg: {
+		...rawScale(ROLE_DEFAULT_SCALE.bg),
+
 		canvas: {
 			value: {
-				_light: "{colors.slate.1}",
-				_dark: "{colors.slate.1}",
+				_light: "var(--colors-bg-1)",
+				_dark: "var(--colors-bg-1)",
 			},
 		},
 
 		default: {
 			value: {
-				_light: "{colors.white}",
-				_dark: "{colors.slate.2}",
+				_light: "{colors.gray.1}",
+				_dark: "var(--colors-bg-2)",
 			},
 		},
 
 		muted: {
 			value: {
-				_light: "{colors.slate.2}",
-				_dark: "{colors.slate.3}",
+				_light: "var(--colors-bg-2)",
+				_dark: "var(--colors-bg-3)",
 			},
 		},
 
 		subtle: {
 			value: {
-				_light: "{colors.slate.3}",
-				_dark: "{colors.slate.4}",
+				_light: "var(--colors-bg-3)",
+				_dark: "var(--colors-bg-4)",
 			},
 		},
 
 		emphasized: {
 			value: {
-				_light: "{colors.slate.4}",
-				_dark: "{colors.slate.5}",
+				_light: "var(--colors-bg-4)",
+				_dark: "var(--colors-bg-5)",
 			},
 		},
 
 		disabled: {
 			value: {
-				_light: "{colors.slate.3}",
-				_dark: "{colors.slate.4}",
+				_light: "var(--colors-bg-3)",
+				_dark: "var(--colors-bg-4)",
 			},
 		},
 	},
 
 	// Border colors
 	border: {
+		...rawScale(ROLE_DEFAULT_SCALE.border),
+
 		default: {
 			value: {
-				_light: "{colors.slate.6}",
-				_dark: "{colors.slate.6}",
+				_light: "var(--colors-border-6)",
+				_dark: "var(--colors-border-6)",
 			},
 		},
 
 		muted: {
 			value: {
-				_light: "{colors.slate.5}",
-				_dark: "{colors.slate.5}",
+				_light: "var(--colors-border-5)",
+				_dark: "var(--colors-border-5)",
 			},
 		},
 
 		subtle: {
 			value: {
-				_light: "{colors.slate.4}",
-				_dark: "{colors.slate.4}",
+				_light: "var(--colors-border-4)",
+				_dark: "var(--colors-border-4)",
 			},
 		},
 
 		emphasized: {
 			value: {
-				_light: "{colors.slate.7}",
-				_dark: "{colors.slate.7}",
+				_light: "var(--colors-border-7)",
+				_dark: "var(--colors-border-7)",
 			},
 		},
 
 		disabled: {
 			value: {
-				_light: "{colors.slate.4}",
-				_dark: "{colors.slate.4}",
+				_light: "var(--colors-border-4)",
+				_dark: "var(--colors-border-4)",
 			},
 		},
 
 		outline: {
 			value: {
-				_light: "{colors.slate.8}",
-				_dark: "{colors.slate.8}",
+				_light: "var(--colors-border-8)",
+				_dark: "var(--colors-border-8)",
 			},
 		},
 	},
@@ -259,48 +274,53 @@ export const semanticColors = {
 
 	// Status colors
 	success: {
+		...rawScale(ROLE_DEFAULT_SCALE.success),
+
 		default: {
-			value: { _light: "{colors.green.9}", _dark: "{colors.green.9}" },
+			value: {
+				_light: "var(--colors-success-9)",
+				_dark: "var(--colors-success-9)",
+			},
 		},
 		emphasized: {
 			value: {
-				_light: "{colors.green.10}",
-				_dark: "{colors.green.10}",
+				_light: "var(--colors-success-10)",
+				_dark: "var(--colors-success-10)",
 			},
 		},
 		fg: {
-			value: { _light: "{colors.white}", _dark: "{colors.white}" },
+			value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 		},
 		muted: {
 			value: {
-				_light: "{colors.green.a3}",
-				_dark: "{colors.green.a3}",
+				_light: "var(--colors-success-a3)",
+				_dark: "var(--colors-success-a3)",
 			},
 		},
 		text: {
 			value: {
-				_light: "{colors.green.11}",
-				_dark: "{colors.green.11}",
+				_light: "var(--colors-success-11)",
+				_dark: "var(--colors-success-11)",
 			},
 		},
 		solid: {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.9}",
-						_dark: "{colors.green.9}",
+						_light: "var(--colors-success-9)",
+						_dark: "var(--colors-success-9)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.green.10}",
-						_dark: "{colors.green.10}",
+						_light: "var(--colors-success-10)",
+						_dark: "var(--colors-success-10)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
-					value: { _light: "{colors.white}", _dark: "{colors.white}" },
+					value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 				},
 			},
 		},
@@ -308,28 +328,28 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a3}",
-						_dark: "{colors.green.a3}",
+						_light: "var(--colors-success-a3)",
+						_dark: "var(--colors-success-a3)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.green.a4}",
-						_dark: "{colors.green.a4}",
+						_light: "var(--colors-success-a4)",
+						_dark: "var(--colors-success-a4)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.green.a5}",
-						_dark: "{colors.green.a5}",
+						_light: "var(--colors-success-a5)",
+						_dark: "var(--colors-success-a5)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a11}",
-						_dark: "{colors.green.a11}",
+						_light: "var(--colors-success-a11)",
+						_dark: "var(--colors-success-a11)",
 					},
 				},
 			},
@@ -338,36 +358,36 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a2}",
-						_dark: "{colors.green.a2}",
+						_light: "var(--colors-success-a2)",
+						_dark: "var(--colors-success-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.green.a3}",
-						_dark: "{colors.green.a3}",
+						_light: "var(--colors-success-a3)",
+						_dark: "var(--colors-success-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a6}",
-						_dark: "{colors.green.a6}",
+						_light: "var(--colors-success-a6)",
+						_dark: "var(--colors-success-a6)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.green.a7}",
-						_dark: "{colors.green.a7}",
+						_light: "var(--colors-success-a7)",
+						_dark: "var(--colors-success-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a11}",
-						_dark: "{colors.green.a11}",
+						_light: "var(--colors-success-a11)",
+						_dark: "var(--colors-success-a11)",
 					},
 				},
 			},
@@ -376,30 +396,30 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.green.a2}",
-						_dark: "{colors.green.a2}",
+						_light: "var(--colors-success-a2)",
+						_dark: "var(--colors-success-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.green.a3}",
-						_dark: "{colors.green.a3}",
+						_light: "var(--colors-success-a3)",
+						_dark: "var(--colors-success-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a7}",
-						_dark: "{colors.green.a7}",
+						_light: "var(--colors-success-a7)",
+						_dark: "var(--colors-success-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a11}",
-						_dark: "{colors.green.a11}",
+						_light: "var(--colors-success-a11)",
+						_dark: "var(--colors-success-a11)",
 					},
 				},
 			},
@@ -408,22 +428,22 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.green.a3}",
-						_dark: "{colors.green.a3}",
+						_light: "var(--colors-success-a3)",
+						_dark: "var(--colors-success-a3)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.green.a4}",
-						_dark: "{colors.green.a4}",
+						_light: "var(--colors-success-a4)",
+						_dark: "var(--colors-success-a4)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.green.a11}",
-						_dark: "{colors.green.a11}",
+						_light: "var(--colors-success-a11)",
+						_dark: "var(--colors-success-a11)",
 					},
 				},
 			},
@@ -431,48 +451,53 @@ export const semanticColors = {
 	},
 
 	warning: {
+		...rawScale(ROLE_DEFAULT_SCALE.warning),
+
 		default: {
-			value: { _light: "{colors.amber.9}", _dark: "{colors.amber.9}" },
+			value: {
+				_light: "var(--colors-warning-9)",
+				_dark: "var(--colors-warning-9)",
+			},
 		},
 		emphasized: {
 			value: {
-				_light: "{colors.amber.10}",
-				_dark: "{colors.amber.10}",
+				_light: "var(--colors-warning-10)",
+				_dark: "var(--colors-warning-10)",
 			},
 		},
 		fg: {
-			value: { _light: "{colors.black}", _dark: "{colors.black}" },
+			value: { _light: "{colors.black.9}", _dark: "{colors.black.9}" },
 		},
 		muted: {
 			value: {
-				_light: "{colors.amber.a3}",
-				_dark: "{colors.amber.a3}",
+				_light: "var(--colors-warning-a3)",
+				_dark: "var(--colors-warning-a3)",
 			},
 		},
 		text: {
 			value: {
-				_light: "{colors.amber.11}",
-				_dark: "{colors.amber.11}",
+				_light: "var(--colors-warning-11)",
+				_dark: "var(--colors-warning-11)",
 			},
 		},
 		solid: {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.9}",
-						_dark: "{colors.amber.9}",
+						_light: "var(--colors-warning-9)",
+						_dark: "var(--colors-warning-9)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.amber.10}",
-						_dark: "{colors.amber.10}",
+						_light: "var(--colors-warning-10)",
+						_dark: "var(--colors-warning-10)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
-					value: { _light: "{colors.black}", _dark: "{colors.black}" },
+					value: { _light: "{colors.black.9}", _dark: "{colors.black.9}" },
 				},
 			},
 		},
@@ -480,28 +505,28 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a3}",
-						_dark: "{colors.amber.a3}",
+						_light: "var(--colors-warning-a3)",
+						_dark: "var(--colors-warning-a3)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.amber.a4}",
-						_dark: "{colors.amber.a4}",
+						_light: "var(--colors-warning-a4)",
+						_dark: "var(--colors-warning-a4)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.amber.a5}",
-						_dark: "{colors.amber.a5}",
+						_light: "var(--colors-warning-a5)",
+						_dark: "var(--colors-warning-a5)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a11}",
-						_dark: "{colors.amber.a11}",
+						_light: "var(--colors-warning-a11)",
+						_dark: "var(--colors-warning-a11)",
 					},
 				},
 			},
@@ -510,36 +535,36 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a2}",
-						_dark: "{colors.amber.a2}",
+						_light: "var(--colors-warning-a2)",
+						_dark: "var(--colors-warning-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.amber.a3}",
-						_dark: "{colors.amber.a3}",
+						_light: "var(--colors-warning-a3)",
+						_dark: "var(--colors-warning-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a6}",
-						_dark: "{colors.amber.a6}",
+						_light: "var(--colors-warning-a6)",
+						_dark: "var(--colors-warning-a6)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.amber.a7}",
-						_dark: "{colors.amber.a7}",
+						_light: "var(--colors-warning-a7)",
+						_dark: "var(--colors-warning-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a11}",
-						_dark: "{colors.amber.a11}",
+						_light: "var(--colors-warning-a11)",
+						_dark: "var(--colors-warning-a11)",
 					},
 				},
 			},
@@ -548,30 +573,30 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.amber.a2}",
-						_dark: "{colors.amber.a2}",
+						_light: "var(--colors-warning-a2)",
+						_dark: "var(--colors-warning-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.amber.a3}",
-						_dark: "{colors.amber.a3}",
+						_light: "var(--colors-warning-a3)",
+						_dark: "var(--colors-warning-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a7}",
-						_dark: "{colors.amber.a7}",
+						_light: "var(--colors-warning-a7)",
+						_dark: "var(--colors-warning-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a11}",
-						_dark: "{colors.amber.a11}",
+						_light: "var(--colors-warning-a11)",
+						_dark: "var(--colors-warning-a11)",
 					},
 				},
 			},
@@ -580,22 +605,22 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.amber.a3}",
-						_dark: "{colors.amber.a3}",
+						_light: "var(--colors-warning-a3)",
+						_dark: "var(--colors-warning-a3)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.amber.a4}",
-						_dark: "{colors.amber.a4}",
+						_light: "var(--colors-warning-a4)",
+						_dark: "var(--colors-warning-a4)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.amber.a11}",
-						_dark: "{colors.amber.a11}",
+						_light: "var(--colors-warning-a11)",
+						_dark: "var(--colors-warning-a11)",
 					},
 				},
 			},
@@ -603,36 +628,53 @@ export const semanticColors = {
 	},
 
 	error: {
+		...rawScale(ROLE_DEFAULT_SCALE.error),
+
 		default: {
-			value: { _light: "{colors.red.9}", _dark: "{colors.red.9}" },
+			value: {
+				_light: "var(--colors-error-9)",
+				_dark: "var(--colors-error-9)",
+			},
 		},
 		emphasized: {
-			value: { _light: "{colors.red.10}", _dark: "{colors.red.10}" },
+			value: {
+				_light: "var(--colors-error-10)",
+				_dark: "var(--colors-error-10)",
+			},
 		},
 		fg: {
-			value: { _light: "{colors.white}", _dark: "{colors.white}" },
+			value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 		},
 		muted: {
-			value: { _light: "{colors.red.a3}", _dark: "{colors.red.a3}" },
+			value: {
+				_light: "var(--colors-error-a3)",
+				_dark: "var(--colors-error-a3)",
+			},
 		},
 		text: {
-			value: { _light: "{colors.red.11}", _dark: "{colors.red.11}" },
+			value: {
+				_light: "var(--colors-error-11)",
+				_dark: "var(--colors-error-11)",
+			},
 		},
 		solid: {
 			bg: {
 				DEFAULT: {
-					value: { _light: "{colors.red.9}", _dark: "{colors.red.9}" },
+					value: {
+						_light: "var(--colors-error-9)",
+						_dark: "var(--colors-error-9)",
+					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.red.10}",
-						_dark: "{colors.red.10}",
+						_light: "var(--colors-error-10)",
+						_dark: "var(--colors-error-10)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
-					value: { _light: "{colors.white}", _dark: "{colors.white}" },
+					value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 				},
 			},
 		},
@@ -640,28 +682,28 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a3}",
-						_dark: "{colors.red.a3}",
+						_light: "var(--colors-error-a3)",
+						_dark: "var(--colors-error-a3)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.red.a4}",
-						_dark: "{colors.red.a4}",
+						_light: "var(--colors-error-a4)",
+						_dark: "var(--colors-error-a4)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.red.a5}",
-						_dark: "{colors.red.a5}",
+						_light: "var(--colors-error-a5)",
+						_dark: "var(--colors-error-a5)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a11}",
-						_dark: "{colors.red.a11}",
+						_light: "var(--colors-error-a11)",
+						_dark: "var(--colors-error-a11)",
 					},
 				},
 			},
@@ -670,36 +712,36 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a2}",
-						_dark: "{colors.red.a2}",
+						_light: "var(--colors-error-a2)",
+						_dark: "var(--colors-error-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.red.a3}",
-						_dark: "{colors.red.a3}",
+						_light: "var(--colors-error-a3)",
+						_dark: "var(--colors-error-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a6}",
-						_dark: "{colors.red.a6}",
+						_light: "var(--colors-error-a6)",
+						_dark: "var(--colors-error-a6)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.red.a7}",
-						_dark: "{colors.red.a7}",
+						_light: "var(--colors-error-a7)",
+						_dark: "var(--colors-error-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a11}",
-						_dark: "{colors.red.a11}",
+						_light: "var(--colors-error-a11)",
+						_dark: "var(--colors-error-a11)",
 					},
 				},
 			},
@@ -708,30 +750,30 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.red.a2}",
-						_dark: "{colors.red.a2}",
+						_light: "var(--colors-error-a2)",
+						_dark: "var(--colors-error-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.red.a3}",
-						_dark: "{colors.red.a3}",
+						_light: "var(--colors-error-a3)",
+						_dark: "var(--colors-error-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a7}",
-						_dark: "{colors.red.a7}",
+						_light: "var(--colors-error-a7)",
+						_dark: "var(--colors-error-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a11}",
-						_dark: "{colors.red.a11}",
+						_light: "var(--colors-error-a11)",
+						_dark: "var(--colors-error-a11)",
 					},
 				},
 			},
@@ -740,22 +782,22 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.red.a3}",
-						_dark: "{colors.red.a3}",
+						_light: "var(--colors-error-a3)",
+						_dark: "var(--colors-error-a3)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.red.a4}",
-						_dark: "{colors.red.a4}",
+						_light: "var(--colors-error-a4)",
+						_dark: "var(--colors-error-a4)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.red.a11}",
-						_dark: "{colors.red.a11}",
+						_light: "var(--colors-error-a11)",
+						_dark: "var(--colors-error-a11)",
 					},
 				},
 			},
@@ -763,39 +805,50 @@ export const semanticColors = {
 	},
 
 	info: {
+		...rawScale(ROLE_DEFAULT_SCALE.info),
+
 		default: {
-			value: { _light: "{colors.blue.9}", _dark: "{colors.blue.9}" },
+			value: { _light: "var(--colors-info-9)", _dark: "var(--colors-info-9)" },
 		},
 		emphasized: {
-			value: { _light: "{colors.blue.10}", _dark: "{colors.blue.10}" },
+			value: {
+				_light: "var(--colors-info-10)",
+				_dark: "var(--colors-info-10)",
+			},
 		},
 		fg: {
-			value: { _light: "{colors.white}", _dark: "{colors.white}" },
+			value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 		},
 		muted: {
-			value: { _light: "{colors.blue.a3}", _dark: "{colors.blue.a3}" },
+			value: {
+				_light: "var(--colors-info-a3)",
+				_dark: "var(--colors-info-a3)",
+			},
 		},
 		text: {
-			value: { _light: "{colors.blue.11}", _dark: "{colors.blue.11}" },
+			value: {
+				_light: "var(--colors-info-11)",
+				_dark: "var(--colors-info-11)",
+			},
 		},
 		solid: {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.9}",
-						_dark: "{colors.blue.9}",
+						_light: "var(--colors-info-9)",
+						_dark: "var(--colors-info-9)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.blue.10}",
-						_dark: "{colors.blue.10}",
+						_light: "var(--colors-info-10)",
+						_dark: "var(--colors-info-10)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
-					value: { _light: "{colors.white}", _dark: "{colors.white}" },
+					value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 				},
 			},
 		},
@@ -803,28 +856,28 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-info-a3)",
+						_dark: "var(--colors-info-a3)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.blue.a4}",
-						_dark: "{colors.blue.a4}",
+						_light: "var(--colors-info-a4)",
+						_dark: "var(--colors-info-a4)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a5}",
-						_dark: "{colors.blue.a5}",
+						_light: "var(--colors-info-a5)",
+						_dark: "var(--colors-info-a5)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-info-a11)",
+						_dark: "var(--colors-info-a11)",
 					},
 				},
 			},
@@ -833,36 +886,36 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a2}",
-						_dark: "{colors.blue.a2}",
+						_light: "var(--colors-info-a2)",
+						_dark: "var(--colors-info-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-info-a3)",
+						_dark: "var(--colors-info-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a6}",
-						_dark: "{colors.blue.a6}",
+						_light: "var(--colors-info-a6)",
+						_dark: "var(--colors-info-a6)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.blue.a7}",
-						_dark: "{colors.blue.a7}",
+						_light: "var(--colors-info-a7)",
+						_dark: "var(--colors-info-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-info-a11)",
+						_dark: "var(--colors-info-a11)",
 					},
 				},
 			},
@@ -871,30 +924,30 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.blue.a2}",
-						_dark: "{colors.blue.a2}",
+						_light: "var(--colors-info-a2)",
+						_dark: "var(--colors-info-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-info-a3)",
+						_dark: "var(--colors-info-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a7}",
-						_dark: "{colors.blue.a7}",
+						_light: "var(--colors-info-a7)",
+						_dark: "var(--colors-info-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-info-a11)",
+						_dark: "var(--colors-info-a11)",
 					},
 				},
 			},
@@ -903,22 +956,22 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-info-a3)",
+						_dark: "var(--colors-info-a3)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a4}",
-						_dark: "{colors.blue.a4}",
+						_light: "var(--colors-info-a4)",
+						_dark: "var(--colors-info-a4)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-info-a11)",
+						_dark: "var(--colors-info-a11)",
 					},
 				},
 			},
@@ -926,24 +979,26 @@ export const semanticColors = {
 	},
 
 	primary: {
+		...rawScale(ROLE_DEFAULT_SCALE.primary),
+
 		solid: {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.9}",
-						_dark: "{colors.blue.9}",
+						_light: "var(--colors-primary-9)",
+						_dark: "var(--colors-primary-9)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.blue.10}",
-						_dark: "{colors.blue.10}",
+						_light: "var(--colors-primary-10)",
+						_dark: "var(--colors-primary-10)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
-					value: { _light: "{colors.white}", _dark: "{colors.white}" },
+					value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 				},
 			},
 		},
@@ -951,28 +1006,28 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-primary-a3)",
+						_dark: "var(--colors-primary-a3)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.blue.a4}",
-						_dark: "{colors.blue.a4}",
+						_light: "var(--colors-primary-a4)",
+						_dark: "var(--colors-primary-a4)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a5}",
-						_dark: "{colors.blue.a5}",
+						_light: "var(--colors-primary-a5)",
+						_dark: "var(--colors-primary-a5)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-primary-a11)",
+						_dark: "var(--colors-primary-a11)",
 					},
 				},
 			},
@@ -981,36 +1036,36 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a2}",
-						_dark: "{colors.blue.a2}",
+						_light: "var(--colors-primary-a2)",
+						_dark: "var(--colors-primary-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-primary-a3)",
+						_dark: "var(--colors-primary-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a6}",
-						_dark: "{colors.blue.a6}",
+						_light: "var(--colors-primary-a6)",
+						_dark: "var(--colors-primary-a6)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.blue.a7}",
-						_dark: "{colors.blue.a7}",
+						_light: "var(--colors-primary-a7)",
+						_dark: "var(--colors-primary-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-primary-a11)",
+						_dark: "var(--colors-primary-a11)",
 					},
 				},
 			},
@@ -1019,30 +1074,30 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.blue.a2}",
-						_dark: "{colors.blue.a2}",
+						_light: "var(--colors-primary-a2)",
+						_dark: "var(--colors-primary-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-primary-a3)",
+						_dark: "var(--colors-primary-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a7}",
-						_dark: "{colors.blue.a7}",
+						_light: "var(--colors-primary-a7)",
+						_dark: "var(--colors-primary-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-primary-a11)",
+						_dark: "var(--colors-primary-a11)",
 					},
 				},
 			},
@@ -1051,22 +1106,22 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.blue.a3}",
-						_dark: "{colors.blue.a3}",
+						_light: "var(--colors-primary-a3)",
+						_dark: "var(--colors-primary-a3)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.blue.a4}",
-						_dark: "{colors.blue.a4}",
+						_light: "var(--colors-primary-a4)",
+						_dark: "var(--colors-primary-a4)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.blue.a11}",
-						_dark: "{colors.blue.a11}",
+						_light: "var(--colors-primary-a11)",
+						_dark: "var(--colors-primary-a11)",
 					},
 				},
 			},
@@ -1074,24 +1129,26 @@ export const semanticColors = {
 	},
 
 	secondary: {
+		...rawScale(ROLE_DEFAULT_SCALE.secondary),
+
 		solid: {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.9}",
-						_dark: "{colors.slate.9}",
+						_light: "var(--colors-secondary-9)",
+						_dark: "var(--colors-secondary-9)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.slate.10}",
-						_dark: "{colors.slate.10}",
+						_light: "var(--colors-secondary-10)",
+						_dark: "var(--colors-secondary-10)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
-					value: { _light: "{colors.white}", _dark: "{colors.white}" },
+					value: { _light: "{colors.white.9}", _dark: "{colors.white.9}" },
 				},
 			},
 		},
@@ -1099,28 +1156,28 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a3}",
-						_dark: "{colors.slate.a3}",
+						_light: "var(--colors-secondary-a3)",
+						_dark: "var(--colors-secondary-a3)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.slate.a4}",
-						_dark: "{colors.slate.a4}",
+						_light: "var(--colors-secondary-a4)",
+						_dark: "var(--colors-secondary-a4)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.slate.a5}",
-						_dark: "{colors.slate.a5}",
+						_light: "var(--colors-secondary-a5)",
+						_dark: "var(--colors-secondary-a5)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a11}",
-						_dark: "{colors.slate.a11}",
+						_light: "var(--colors-secondary-a11)",
+						_dark: "var(--colors-secondary-a11)",
 					},
 				},
 			},
@@ -1129,36 +1186,36 @@ export const semanticColors = {
 			bg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a2}",
-						_dark: "{colors.slate.a2}",
+						_light: "var(--colors-secondary-a2)",
+						_dark: "var(--colors-secondary-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.slate.a3}",
-						_dark: "{colors.slate.a3}",
+						_light: "var(--colors-secondary-a3)",
+						_dark: "var(--colors-secondary-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a6}",
-						_dark: "{colors.slate.a6}",
+						_light: "var(--colors-secondary-a6)",
+						_dark: "var(--colors-secondary-a6)",
 					},
 				},
 				hover: {
 					value: {
-						_light: "{colors.slate.a7}",
-						_dark: "{colors.slate.a7}",
+						_light: "var(--colors-secondary-a7)",
+						_dark: "var(--colors-secondary-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a11}",
-						_dark: "{colors.slate.a11}",
+						_light: "var(--colors-secondary-a11)",
+						_dark: "var(--colors-secondary-a11)",
 					},
 				},
 			},
@@ -1167,30 +1224,30 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.slate.a2}",
-						_dark: "{colors.slate.a2}",
+						_light: "var(--colors-secondary-a2)",
+						_dark: "var(--colors-secondary-a2)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.slate.a3}",
-						_dark: "{colors.slate.a3}",
+						_light: "var(--colors-secondary-a3)",
+						_dark: "var(--colors-secondary-a3)",
 					},
 				},
 			},
 			border: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a7}",
-						_dark: "{colors.slate.a7}",
+						_light: "var(--colors-secondary-a7)",
+						_dark: "var(--colors-secondary-a7)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a11}",
-						_dark: "{colors.slate.a11}",
+						_light: "var(--colors-secondary-a11)",
+						_dark: "var(--colors-secondary-a11)",
 					},
 				},
 			},
@@ -1199,22 +1256,22 @@ export const semanticColors = {
 			bg: {
 				hover: {
 					value: {
-						_light: "{colors.slate.a3}",
-						_dark: "{colors.slate.a3}",
+						_light: "var(--colors-secondary-a3)",
+						_dark: "var(--colors-secondary-a3)",
 					},
 				},
 				active: {
 					value: {
-						_light: "{colors.slate.a4}",
-						_dark: "{colors.slate.a4}",
+						_light: "var(--colors-secondary-a4)",
+						_dark: "var(--colors-secondary-a4)",
 					},
 				},
 			},
 			fg: {
 				DEFAULT: {
 					value: {
-						_light: "{colors.slate.a11}",
-						_dark: "{colors.slate.a11}",
+						_light: "var(--colors-secondary-a11)",
+						_dark: "var(--colors-secondary-a11)",
 					},
 				},
 			},
@@ -1223,34 +1280,46 @@ export const semanticColors = {
 
 	// Highlight (selection) color - Nano uses #44a1d9
 	highlight: {
+		...rawScale(ROLE_DEFAULT_SCALE.highlight),
+
 		bg: {
 			value: {
-				_light: "{colors.blue.a4}",
-				_dark: "{colors.blue.a4}",
+				_light: "var(--colors-highlight-a4)",
+				_dark: "var(--colors-highlight-a4)",
 			},
 		},
 
 		fg: {
 			value: {
-				_light: "{colors.blue.12}",
-				_dark: "{colors.blue.12}",
+				_light: "var(--colors-highlight-12)",
+				_dark: "var(--colors-highlight-12)",
 			},
 		},
 	},
 
 	// Focus ring color
 	focusRing: {
-		value: {
-			_light: "{colors.blue.8}",
-			_dark: "{colors.blue.8}",
+		...rawScale(ROLE_DEFAULT_SCALE.focusRing),
+
+		default: {
+			value: {
+				// Panda kebab-cases this multi-word token path for the CSS
+				// variable name, unlike every other (single-word) role.
+				_light: "var(--colors-focus-ring-8)",
+				_dark: "var(--colors-focus-ring-8)",
+			},
 		},
 	},
 
 	// Overlay/mask background - Nano uses rgba(0, 0, 0, 0.4)
 	overlay: {
-		value: {
-			_light: "{colors.black.a6}",
-			_dark: "{colors.black.a8}",
+		...rawScale(ROLE_DEFAULT_SCALE.overlay),
+
+		default: {
+			value: {
+				_light: "var(--colors-overlay-a6)",
+				_dark: "var(--colors-overlay-a8)",
+			},
 		},
 	},
 };
@@ -1268,7 +1337,6 @@ export const pandaPreset = definePreset({
 			textStyles,
 
 			tokens: {
-				colors,
 				durations,
 				zIndex,
 			},

@@ -1,9 +1,16 @@
 import { MDXProvider } from "@mdx-js/react";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelect, useValue } from "react-cosmos/client";
 import { css } from "styled-system/css";
 import { colorScaleNames } from "./panda-preset";
+import {
+	ROLE_DEFAULT_SCALE,
+	ROLE_LABELS,
+	ROLES,
+	type Role,
+} from "./theme/color-scheme";
+import { ThemeProvider, useTheme } from "./theme/ThemeProvider";
 
 import "./index.css";
 
@@ -91,47 +98,152 @@ import "./index.css";
 // };
 
 const DARK_MODE_STORAGE_KEY = "cosmos-dark-mode";
-const COLOR_SCHEME_STORAGE_KEY = "cosmos-color-scheme";
+const ACCENT_COLOR_STORAGE_KEY = "cosmos-accent-color";
 
 function getStoredDarkMode(): boolean {
 	return window.localStorage.getItem(DARK_MODE_STORAGE_KEY) === "true";
 }
 
-function getStoredColorScheme(): string {
-	const stored = window.localStorage.getItem(COLOR_SCHEME_STORAGE_KEY);
-	return colorScaleNames.find((scheme) => scheme === stored) ?? "indigo";
+function getStoredScale(storageKey: string, fallback: string): string {
+	const stored = window.localStorage.getItem(storageKey);
+	return colorScaleNames.find((name) => name === stored) ?? fallback;
+}
+
+// One picker per semantic role, each independently choosing which color scale
+// backs it (see theme/color-scheme.ts for how a scale becomes actual CSS vars,
+// and theme/ThemeProvider.tsx for the component that applies them below).
+//
+// `defaultValue` is kept fixed (the library's real default) rather than read
+// from storage, so Cosmos's own "Reset to default values" button restores the
+// true default instead of getting stuck on whatever was last persisted. The
+// persisted value, if any, is instead applied once on mount via `setScale`.
+function useRolePicker(role: Role): string {
+	const storageKey = `cosmos-role-${role}`;
+	const defaultScale = ROLE_DEFAULT_SCALE[role];
+
+	const [scale, setScale] = useSelect(ROLE_LABELS[role], {
+		options: colorScaleNames,
+		defaultValue: defaultScale,
+	});
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: only ever meant to run once, on mount
+	useEffect(() => {
+		const stored = getStoredScale(storageKey, defaultScale);
+		if (stored !== defaultScale) setScale(stored);
+	}, []);
+
+	useEffect(() => {
+		window.localStorage.setItem(storageKey, scale);
+	}, [scale, storageKey]);
+
+	return scale;
 }
 
 export default function Decorator({ children }: { children: ReactNode }) {
-	// Read once on mount: these hooks reset the current selection whenever the
-	// `defaultValue` they were given changes between renders, so re-reading
-	// localStorage on every render created a feedback loop with the effects below.
-	const [initialDarkMode] = useState(getStoredDarkMode);
-	const [initialColorScheme] = useState(getStoredColorScheme);
-
-	const [isDark] = useValue("Dark mode", { defaultValue: initialDarkMode });
-	const [scheme] = useSelect("Color scheme", {
+	const [isDark, setIsDark] = useValue("Dark mode", { defaultValue: false });
+	const [accentColor, setAccentColor] = useSelect("Accent color", {
 		options: colorScaleNames,
-		defaultValue: initialColorScheme,
+		defaultValue: "indigo",
 	});
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: only ever meant to run once, on mount
+	useEffect(() => {
+		const storedDarkMode = getStoredDarkMode();
+		if (storedDarkMode) setIsDark(storedDarkMode);
+		const storedAccentColor = getStoredScale(
+			ACCENT_COLOR_STORAGE_KEY,
+			"indigo",
+		);
+		if (storedAccentColor !== "indigo") setAccentColor(storedAccentColor);
+	}, []);
+
+	// Hooks must be called unconditionally in the same order every render, so
+	// each role gets its own explicit call rather than looping over ROLES.
+	const fg = useRolePicker("fg");
+	const bg = useRolePicker("bg");
+	const border = useRolePicker("border");
+	const success = useRolePicker("success");
+	const warning = useRolePicker("warning");
+	const error = useRolePicker("error");
+	const info = useRolePicker("info");
+	const primary = useRolePicker("primary");
+	const secondary = useRolePicker("secondary");
+	const highlight = useRolePicker("highlight");
+	const focusRing = useRolePicker("focusRing");
+	const overlay = useRolePicker("overlay");
+	const roleScales: Record<Role, string> = {
+		fg,
+		bg,
+		border,
+		success,
+		warning,
+		error,
+		info,
+		primary,
+		secondary,
+		highlight,
+		focusRing,
+		overlay,
+	};
 
 	useEffect(() => {
 		window.localStorage.setItem(DARK_MODE_STORAGE_KEY, String(isDark));
 	}, [isDark]);
 
 	useEffect(() => {
-		window.localStorage.setItem(COLOR_SCHEME_STORAGE_KEY, scheme);
-	}, [scheme]);
-
-	const colorMode = isDark ? "dark" : "light";
+		window.localStorage.setItem(ACCENT_COLOR_STORAGE_KEY, accentColor);
+	}, [accentColor]);
 
 	return (
 		<MDXProvider>
-			<div
-				className={`${colorMode} ${css({ colorPalette: scheme, minH: "100vh", background: "bg.canvas", color: "fg.default" })}`}
+			<ThemeProvider
+				defaultDarkMode={isDark}
+				defaultAccentColor={accentColor}
+				defaultRoles={roleScales}
+				className={css({
+					minH: "100vh",
+					background: "bg.canvas",
+					color: "fg.default",
+				})}
 			>
+				<SyncCosmosControlsIntoTheme
+					isDark={isDark}
+					accentColor={accentColor}
+					roleScales={roleScales}
+				/>
 				{children}
-			</div>
+			</ThemeProvider>
 		</MDXProvider>
 	);
+}
+
+// ThemeProvider owns its state internally (as it must for real consumers), so
+// Cosmos's own controls - the actual source of truth for the preview - are
+// pushed in via `useTheme()`'s setters rather than read back out of it.
+function SyncCosmosControlsIntoTheme({
+	isDark,
+	accentColor,
+	roleScales,
+}: {
+	isDark: boolean;
+	accentColor: string;
+	roleScales: Record<Role, string>;
+}) {
+	const { setDarkMode, setAccentColor, setRoleScale } = useTheme();
+
+	useEffect(() => {
+		setDarkMode(isDark);
+	}, [isDark, setDarkMode]);
+
+	useEffect(() => {
+		setAccentColor(accentColor);
+	}, [accentColor, setAccentColor]);
+
+	useEffect(() => {
+		for (const role of ROLES) {
+			setRoleScale(role, roleScales[role]);
+		}
+	}, [roleScales, setRoleScale]);
+
+	return null;
 }
