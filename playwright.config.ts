@@ -6,7 +6,10 @@ export default defineConfig({
 	forbidOnly: !!process.env.CI,
 	retries: 0,
 	workers: process.env.CI ? 1 : undefined,
-	reporter: [["html", { outputFolder: "playwright-report" }], ["list"]],
+	reporter: [
+		["html", { outputFolder: "playwright-report", open: "never" }],
+		["list"],
+	],
 	snapshotPathTemplate: "{testDir}/{testFilePath}-snapshots/{arg}{ext}",
 	use: {
 		baseURL: "http://localhost:5100",
