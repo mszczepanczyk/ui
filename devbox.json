@@ -42,7 +42,7 @@
 	"shell": {
 		"init_hook": [
 			"npm install",
-			"npm run install:examples",
+			"npm run examples:install",
 			"npx playwright install chromium"
 		]
 	}
