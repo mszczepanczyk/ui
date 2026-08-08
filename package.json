@@ -40,6 +40,7 @@
 		"cosmos": "cosmos",
 		"cosmos:export": "cosmos-export",
 		"dev": "cosmos",
+		"examples:build": "for d in examples/*/; do npm run build --prefix \"$d\"; done",
 		"examples:install": "for d in examples/*/; do npm install --prefix \"$d\"; done",
 		"format": "biome check --write .",
 		"lint": "biome check .",
