@@ -1,0 +1,129 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "alsa-lib.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#alsa-lib.out",
+      "source": "nixpkg"
+    },
+    "at-spi2-atk.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#at-spi2-atk.out",
+      "source": "nixpkg"
+    },
+    "at-spi2-core.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#at-spi2-core.out",
+      "source": "nixpkg"
+    },
+    "atk.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#atk.out",
+      "source": "nixpkg"
+    },
+    "cairo.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#cairo.out",
+      "source": "nixpkg"
+    },
+    "cups.lib": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#cups.lib",
+      "source": "nixpkg"
+    },
+    "dbus.lib": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#dbus.lib",
+      "source": "nixpkg"
+    },
+    "expat.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#expat.out",
+      "source": "nixpkg"
+    },
+    "fontconfig.lib": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#fontconfig.lib",
+      "source": "nixpkg"
+    },
+    "freetype.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#freetype.out",
+      "source": "nixpkg"
+    },
+    "gcc-unwrapped.lib": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#gcc-unwrapped.lib",
+      "source": "nixpkg"
+    },
+    "gdk-pixbuf.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#gdk-pixbuf.out",
+      "source": "nixpkg"
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-07-27T08:35:34Z",
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?lastModified=1785141334&narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D"
+    },
+    "glib.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#glib.out",
+      "source": "nixpkg"
+    },
+    "gtk3.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#gtk3.out",
+      "source": "nixpkg"
+    },
+    "libgbm.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#libgbm.out",
+      "source": "nixpkg"
+    },
+    "libxkbcommon.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#libxkbcommon.out",
+      "source": "nixpkg"
+    },
+    "nspr.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#nspr.out",
+      "source": "nixpkg"
+    },
+    "nss.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#nss.out",
+      "source": "nixpkg"
+    },
+    "pango.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#pango.out",
+      "source": "nixpkg"
+    },
+    "udev.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#udev.out",
+      "source": "nixpkg"
+    },
+    "xorg.libX11.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libX11.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXcomposite.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXcomposite.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXcursor.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXcursor.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXdamage.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXdamage.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXext.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXext.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXfixes.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXfixes.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXi.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXi.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXrandr.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXrandr.out",
+      "source": "nixpkg"
+    },
+    "xorg.libXrender.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libXrender.out",
+      "source": "nixpkg"
+    },
+    "xorg.libxcb.out": {
+      "resolved": "github:NixOS/nixpkgs/38a4887411571457d700c51c64a6e49ead2ed5ab?narHash=sha256-kh35kIx7el4Jk8Ki3BH9%2FPn1eZYSYLJ6LMALos0zOy0%3D#xorg.libxcb.out",
+      "source": "nixpkg"
+    }
+  }
+}

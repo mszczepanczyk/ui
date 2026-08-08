@@ -41,6 +41,7 @@
 		"cosmos:export": "cosmos-export",
 		"dev": "cosmos",
 		"format": "biome check --write .",
+		"install:examples": "for d in examples/*/; do npm install --prefix \"$d\"; done",
 		"lint": "biome check .",
 		"prepare": "panda codegen",
 		"preview": "vite preview",
