@@ -19,36 +19,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Install devbox
+        uses: jetify-com/devbox-install-action@v0.14.0
         with:
-          node-version: "24"
-          cache: "npm"
+          devbox-version: "0.17.3"
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
-
-      - name: Type check
-        run: npm run typecheck
-
-      - name: Lint
-        run: npm run lint
+        run: devbox run install
 
       - name: Build
-        run: npm run build
+        run: devbox run build
 
-      - name: Build example projects
-        run: |
-          for example in example-panda example-generic example-css; do
-            echo "Building $example..."
-            (cd examples/$example && npm ci && npm run build)
-          done
-
-      - name: Visual regression tests
-        run: npm run test:visual
+      - name: Test
+        run: devbox run test
 
       - name: Upload test report
         if: always()

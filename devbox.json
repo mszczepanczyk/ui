@@ -40,10 +40,14 @@
 		"DEVBOX_COREPACK_ENABLED": "true"
 	},
 	"shell": {
-		"init_hook": [
-			"npm install",
-			"npm run examples:install",
-			"npx playwright install chromium"
-		]
+		"scripts": {
+			"install": [
+				"npm install",
+				"npm run examples:install",
+				"npx playwright install chromium"
+			],
+			"build": ["npm run build", "npm run examples:build"],
+			"test": ["npm run typecheck", "npm run lint", "npm run test:visual"]
+		}
 	}
 }
