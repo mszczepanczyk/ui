@@ -37,7 +37,32 @@ Step 9 is the "purest" step in each scale - the one mixed with the least white o
 
 Every step also has an alpha (`aN`) version: the same color expressed as a semi-transparent overlay instead of a flat hex. Alpha steps are for layering a color over a background you don't fully control (e.g. a hover state on top of an image or another color), since they blend rather than replace what's underneath.
 
+## Semantic tokens
+
+Components should be built with semantic tokens, not the raw scales above - things like `fg.default`, `bg.subtle`, or `accent.text`. A semantic token points at a specific step of a specific scale, and switches which step it points at between light and dark mode, so using it means you don't have to think about light/dark yourself:
+
+```tsx
+css({ color: "fg.default", bg: "bg.subtle", borderColor: "border.default" });
+```
+
+- **fg** - text colors: `default`, `muted`, `subtle`, `disabled`, `inverted`
+- **bg** - surface colors: `canvas`, `default`, `muted`, `subtle`, `emphasized`, `disabled`
+- **border** - border colors: `default`, `muted`, `subtle`, `emphasized`, `disabled`, `outline`
+- **accent** - the brand color, for links, active states, and anything that should stand out: `default`, `emphasized`, `subtle`, `muted`, `text`, `fg`
+
+## Status and brand colors
+
+`success`, `warning`, `error`, `info`, `primary`, and `secondary` are each a full color family built the same way, with five style variants: `solid`, `subtle`, `surface`, `outline`, and `plain`. Each variant provides a background and foreground color (`surface` and `outline` also provide a border color), plus `hover`/`active` states, e.g. `success.solid.bg`, `success.solid.bg.hover`, `success.solid.fg`.
+
+Components like `Button` pick which family to draw from via Panda's `colorPalette` - `<Button variant="success">` uses the `success` family, `<Button variant="danger">` uses `error`, and so on. If you're building your own component on top of these tokens, styling it with `colorPalette.solid.bg` (etc.) instead of `success.solid.bg` directly lets it work with whichever family is set via `colorPalette`.
+
+## Other tokens
+
+- **highlight** (`bg`, `fg`) - text selection color
+- **focusRing** - the color used for focus outlines
+- **overlay** - the backdrop behind modals and dialogs
+
 ## See also
 
 - **scales** - every scale's 12 steps as a grid, sorted by hue
-- **semantic** - how these raw scales are composed into semantic tokens (`fg`, `bg`, `border`, `accent`, ...)
+- **semantic** - every semantic token above, rendered as swatches
